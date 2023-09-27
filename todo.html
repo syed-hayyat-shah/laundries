@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <!-- Add Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css">
+    <!-- Add Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Add custom CSS for the black theme -->
+    <link rel="stylesheet" href="todo.css">
+</head>
+
+<style>
+    .center {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+</style>
+
+<body>
+    <a href="intex.html">
+        <button type="button" class="btn " style="background-color: #FFFFFF;color: #131917;">Go Home</button>
+    </a>
+    <div class="spinner-border text-warning center" role="status" id="loadingSpinner">
+        <!-- <span class="sr-only">Loading...</span> -->
+    </div>
+
+    <div class="container todo-container">
+
+        <h1 class="text-center"> <i class="fa fas fa-clipboard-list"></i> To-Do List </h1>
+        <div class="d-flex align-items-center">
+            <input type="text" id="newTask" class="form-control" placeholder="Add a new task">
+            <button id="addTask" class="btn btn-primary">Add Task</button>
+        </div>
+
+    </div>
+    <div class="table-container" style="width: 100%; margin: auto; display: flex; justify-content: center;">
+        <table class="table table-striped" id="taskTable" style="width: 100%; border-radius: 10px;">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="row" class="evenly-spaced">#</th>
+                    <th class="evenly-spaced">Task content here</th>
+                    <th class="evenly-spaced">Action </th>
+                    <th class="evenly-spaced">Created At </th>
+                    <th class="evenly-spaced">Updated At </th>
+                    <th class="evenly-spaced">User Id </th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Task rows will be added dynamically here -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Edit Task Modal -->
+    <div class="modal fade" id="editTaskModal" tabindex="-1" aria-labelledby="editTaskModalLabel" aria-hidden="true">
+        <div class="modal-dialog" style="background-color: #131917;">
+            <div class="modal-content" style="background-color: #131917;">
+                <div class="modal-header" style="background-color: #131917;">
+                    <h5 class="modal-title" id="editTaskModalLabel">Edit Task</h5>
+                    <button type="button" class="btn-close" style="background-color: #FFFFFF;" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="text" id="editedTask" class="form-control form-control-modal"
+                        placeholder="Edit the task">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" style="background-color: #54b963; color: #FFFFFF;"
+                        data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-secondary" style="background-color: #54b963; color: #FFFFFF;"
+                        id="saveEditedTask">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="position-fixed top-0 end-0 p-3" id="successToastContainer">
+        <div class="toast fade" id="successToast" style="color: #131917; background-color: #FFFFFF;">
+            <div class="toast-header" style="background-color: #FFFFFF;">
+                <strong class="me-auto" style="color: #54b963;">Success</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body" style="color: #54b963; background-color: #FFFFFF;">
+                Task added successfully.
+            </div>
+        </div>
+    </div>
+    <div class="position-fixed top-0 end-0 p-3" id="duplicateTaskToastContainer">
+        <div class="toast fade" id="duplicateTaskToast" style="color: #131917; background-color: #FFFFFF;">
+            <div class="toast-header" style="background-color: #FFFFFF;">
+                <strong class="me-auto" style="color: #fa0909;">Error</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body" style="color: #fa0909; background-color: #FFFFFF;">
+                Duplicate task! This task already exists.
+            </div>
+        </div>
+    </div>
+
+    <div class="position-fixed top-0 end-0 p-3" id="deleteToastContainer">
+        <div class="toast fade" id="deleteSuccessToast" style="color: #131917; background-color: #FFFFFF;">
+            <div class="toast-header" style="background-color: #FFFFFF;">
+                <strong class="me-auto" style="color: #54b963;">Success</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body" style="color: #fa0909; background-color: #FFFFFF;">
+                Task successfully deleted.
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Bootstrap JS and jQuery (required for some Bootstrap features) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Custom JavaScript for adding, editing, updating, and canceling tasks -->
+    <script>
+        $(document).ready(function () {
+            // Define an array to store tasks as objects with created_at and updated_at properties
+            var tasks = [];
+
+            // Function to save tasks to localStorage
+            function saveTasksToLocalStorage() {
+                localStorage.setItem("tasks", JSON.stringify(tasks));
+            }
+
+            // Function to load tasks from localStorage
+
+            function loadTasksFromLocalStorage() {
+                // Retrieve the current user's userId from sessionStorage
+                const userId = sessionStorage.getItem("userId");
+
+                // Retrieve the current user's data
+                const currentUserData = JSON.parse(localStorage.getItem("userData")) || { data: [] };
+
+                // Display tasks from the current user's data in the table
+                currentUserData.data.forEach(function (task, index) {
+                    addTaskToTable(task.text, index + 1, task.created_at, task.updated_at, userId);
+                });
+            }
+
+
+            // Function to add a task to the table and the tasks array
+            // Function to add a task to the table and the tasks array
+            function addTaskToTable(taskText, index, created_At, updated_At, userId) {
+                var newRow = $("<tr>").addClass("fade-in");
+                newRow.append($("<td >" + index + "</td>"));
+                newRow.append($("<td>" + taskText + "</td>"));
+                var actionsCell = $("<td>");
+                actionsCell.append($("<button class='btn btn-danger btn-sm edit-button' data-bs-toggle='modal' data-bs-target='#editTaskModal'><i class='fas fa-edit'></i> Edit</button>"));
+                actionsCell.append($("<button class='btn btn-danger btn-sm delete-button'><i class='fas fa-trash-alt'></i> Delete</button>"));
+                newRow.append(actionsCell);
+                newRow.append($("<td>" + created_At + "</td>"));
+                newRow.append($("<td>" + updated_At + "</td>"));
+                newRow.append($("<td>" + userId + "</td>")); // Associate the task with the user
+                $("#taskTable tbody").append(newRow);
+
+                
+                // Add the task to the tasks array with the associated userId
+                tasks.push({
+                    text: taskText,
+                    created_at: created_At,
+                    updated_at: updated_At,
+                    userId: userId
+                });
+
+                saveTasksToLocalStorage(); // Save tasks to localStorage
+            }
+
+
+            // Load tasks from localStorage on page load
+            loadTasksFromLocalStorage();
+
+            var editedTaskRow;
+
+            $(document).on("click", ".edit-button", function () {
+                editedTaskRow = $(this).closest("tr");
+                var taskText = editedTaskRow.find("td:nth-child(2)").text();
+                $("#editedTask").val(taskText);
+            });
+
+            $("#saveEditedTask").click(function () {
+                var updatedTaskText = $("#editedTask").val();
+                editedTaskRow.find("td:nth-child(2)").text(updatedTaskText);
+
+                // Find the corresponding task object and update its text and updated_at
+                var rowIndex = editedTaskRow.index();
+                tasks[rowIndex].text = updatedTaskText;
+                var now = new Date();
+                tasks[rowIndex].updated_at = now.toLocaleString();
+
+                // Update the "Updated At" cell in the table
+                editedTaskRow.find("td:nth-child(5)").text(tasks[rowIndex].updated_at);
+
+                saveTasksToLocalStorage(); // Save tasks to localStorage
+                $('#editTaskModal').modal('hide');
+            });
+
+            $(document).on("click", ".delete-button", function () {
+                var row = $(this).closest("tr");
+                var rowIndex = row.index();
+
+                // Use the JavaScript built-in `confirm` function to show a confirmation dialog
+                var confirmed = confirm("Are you sure you want to delete this task: " + tasks[rowIndex].text + "?");
+
+                if (confirmed) {
+                    row.remove();
+                    tasks.splice(rowIndex, 1); // Remove the task from the array
+                    saveTasksToLocalStorage(); // Save tasks to localStorage
+
+                    // Update the row numbers for the remaining tasks
+                    $("#taskTable tbody tr").each(function (index) {
+                        $(this).find("th").text(index + 1);
+                    });
+
+                    // Show the success toast
+                    var deleteSuccessToast = new bootstrap.Toast(document.getElementById('deleteSuccessToast'));
+                    deleteSuccessToast.show();
+                }
+            });
+
+            // ... (Your existing event handlers) ...
+
+            $("#addTask").click(function () {
+                var newTaskText = $("#newTask").val();
+
+                if (newTaskText.trim() !== "") {
+                    if (isTaskAlreadyExists(newTaskText)) {
+                        // Task already exists, show the duplicate task toast
+                        var duplicateTaskToast = new bootstrap.Toast(document.getElementById('duplicateTaskToast'));
+                        duplicateTaskToast.show();
+                    } else {
+                        var now = new Date();
+                        var created_at = now.toLocaleString();
+                        var updated_at = created_at;
+
+                        // Create a task object
+                        var task = {
+                            text: newTaskText,
+                            created_at: created_at,
+                            updated_at: updated_at
+                        };
+
+                        // Retrieve the current user's data
+                        var currentUserData = JSON.parse(localStorage.getItem("userData"));
+
+                        // Add the task to the user's data
+                        currentUserData.data.push(task);
+
+                        // Save the updated user data back to local storage
+                        localStorage.setItem("userData", JSON.stringify(currentUserData));
+
+                        // Display the task in the table
+                        addTaskToTable(newTaskText, currentUserData.data.length, created_at, updated_at, currentUserData.userId);
+
+                        // Show the "Task added successfully" toast
+                        var successToast = new bootstrap.Toast(document.getElementById('successToast'));
+                        successToast.show();
+
+                        $("#newTask").val("");
+                    }
+                }
+            });
+
+
+
+            // ... (Your existing event handlers) ...
+
+            function isTaskAlreadyExists(newTaskText) {
+                var exists = false;
+                $("#taskTable tbody tr").each(function () {
+                    var taskText = $(this).find("td:nth-child(2)").text();
+                    if (taskText === newTaskText) {
+                        exists = true;
+                        // Show the duplicate task toast
+                        var duplicateTaskToast = new bootstrap.Toast(document.getElementById('duplicateTaskToast'));
+                        duplicateTaskToast.show();
+                    }
+                });
+                return exists;
+            }
+        });
+
+        function showMainContent() {
+            document.getElementById("loadingSpinner").style.display = "none";
+            document.getElementById("mainContent").style.display = "block";
+        }
+
+        window.addEventListener("load", showMainContent);
+    </script>
+</body>
+
+</html>

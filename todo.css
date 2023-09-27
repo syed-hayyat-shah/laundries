@@ -1,0 +1,157 @@
+body {
+  background-color: #131917;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+.todo-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #19211e;
+  border-radius: 10px;
+  box-shadow: rgb(12 12 12 / 8%) 0px 1px 20px 0px;
+  margin-top: 20px;
+}
+
+.todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.todo-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.todo-list li:last-child {
+  border-bottom: none;
+}
+
+.delete-button,
+.edit-button,
+.update-button,
+.cancel-button {
+  background-color: #54b963;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.delete-button:hover,
+.edit-button:hover,
+.update-button:hover,
+.cancel-button:hover {
+    transform: scale(1.1); /* Increase the size by 10% on hover */
+}
+
+#newTask {
+  background-color: #19211e;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 5px 0 0 5px;
+  padding: 10px;
+  border-right: none;
+}
+
+#newTask::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+#addTask {
+  background-color: #54b963;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  padding: 10px 15px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background-color 1s ease;
+}
+
+#addTask:hover {
+  background-color: #18cf34;
+}
+
+/* Move Edit and Delete buttons to the right */
+.edit-button,
+.delete-button,
+.button-group {
+  flex: none;
+  margin: 5px;
+}
+
+/* Rounded corners for the input and button */
+#newTask,
+#addTask {
+  border-radius: 0;
+}
+
+.btn-primary {
+  height: 48px;
+  border-radius: 0px 30px 30px 0px !important;
+  width: 140px;
+}
+
+.form-control {
+  border-radius: 30px 0px 0px 30px !important;
+}
+
+.form-control-modal {
+  /* border-radius: 30px !important; */
+  border-radius: 30px 30px 30px 30px !important;
+  background-color: #131917;
+  color: #ffffff;
+}
+
+.table-container {
+  width: 100%;
+  background-color: #131917; /* Background color, adjust as needed */
+  padding: 20px; /* Add padding for spacing */
+  box-sizing: border-box; /* Include padding in the width */
+  margin-top: 20px; /* Add top margin to separate it from the todo-container */
+}
+
+.evenly-spaced {
+  padding: 10px;
+}
+
+.table {
+  background-color: #19211e;
+  color: #ffffff;
+}
+
+.table th,
+.table td {
+  border-color: #131917;
+}
+
+.table thead th {
+  background-color: #19211e;
+  color: #ffffff;
+  border-bottom: 2px solid #131917;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #131917;
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}

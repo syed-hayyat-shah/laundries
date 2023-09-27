@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <!-- Add Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css">
+    <!-- Add Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Add custom CSS for the black theme -->
+    <style>
+    </style>
+</head>
+
+<body>
+   
+    <div class="container p-5">
+        
+        <div class="row">
+            <div class="col-md-4">
+                <select id="firstSelect" class="form-control">
+                    <option value="Software">Software Developer</option>
+                    <option value="Designer">Graphic Designer</option>
+                    <option value="Marketing">Marketing Manager</option>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <select id="lastSelect" class="form-control">
+                    <option value="Engineer">Mechanical Engineer</option>
+                    <option value="Artist">Digital Artist</option>
+                    <option value="Sales">Sales Representative</option>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <select id="handleSelect" class="form-control">
+                    <option value="Manager">Project Manager</option>
+                    <option value="Writer">Technical Writer</option>
+                    <option value="Support">Customer Support Specialist</option>
+                </select>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-6">
+                <select id="statusSelect" class="form-control">
+                    <option value="Pending">Pending</option>
+                    <option value="Rejected">Rejected</option>
+                    <option value="Ended">Ended</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <button id="addButton" class="btn btn-primary">Add</button>
+            </div>
+        </div>
+        <!-- <button id="addButton" class="btn btn-primary">Add</button> -->
+        <br><br>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Handle</th>
+                    <th scope="col">Status</th> <!-- Added Status column -->
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                <!-- Table rows will be added dynamically here -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Add Bootstrap and jQuery JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.min.js"></script>
+
+
+    <script>
+        $(document).ready(function () {
+            let rowNum = 1;
+
+            // Function to add a row to the table
+            function addRow(job, department, manager, status) {
+                const statusClass = getStatusClass(status);
+                const newRow = `
+                    <tr class="${statusClass}">
+                        <th scope="row">${rowNum}</th>
+                        <td>${job}</td>
+                        <td>${department}</td>
+                        <td>${manager}</td>
+                        <td>${status}</td>
+                        <td>
+                            <button class="btn btn-warning btn-sm edit-row">Edit</button>
+                            <button class="btn btn-danger btn-sm delete-row">Delete</button>
+                        </td>
+                    </tr>
+                `;
+                $('#tableBody').append(newRow);
+                rowNum++;
+
+                // Save table data to localStorage
+                saveTableData();
+            }
+
+            // Function to get the CSS class for the status
+            function getStatusClass(status) {
+                switch (status) {
+                    case 'Pending':
+                        return 'table-success';
+                    case 'Rejected':
+                        return 'table-warning';
+                    case 'Ended':
+                        return 'table-danger';
+                    default:
+                        return '';
+                }
+            }
+
+            // Function to save table data to localStorage
+            function saveTableData() {
+                const tableData = $('#tableBody').html();
+                localStorage.setItem('tableData', tableData);
+            }
+
+            // Function to load table data from localStorage
+            function loadTableData() {
+                const savedTableData = localStorage.getItem('tableData');
+                if (savedTableData) {
+                    $('#tableBody').html(savedTableData);
+                }
+            }
+
+            // Load table data when the page loads
+            loadTableData();
+
+            // Event handler for the "Add" button
+            $('#addButton').click(function () {
+                const jobValue = $('#firstSelect').val();
+                const departmentValue = $('#lastSelect').val();
+                const managerValue = $('#handleSelect').val();
+                const statusValue = $('#statusSelect').val();
+
+                if (jobValue === "" || departmentValue === "" || managerValue === "" || statusValue === "") {
+                    alert("Please select values for all fields.");
+                } else {
+                    addRow(jobValue, departmentValue, managerValue, statusValue);
+                    $('#firstSelect').val('');
+                    $('#lastSelect').val('');
+                    $('#handleSelect').val('');
+                    $('#statusSelect').val('Pending');
+                }
+            });
+
+            // Event delegation for the delete buttons
+            $('#tableBody').on('click', '.delete-row', function () {
+                if (confirm("Are you sure you want to delete this row?")) {
+                    $(this).closest('tr').remove();
+                    saveTableData();
+                }
+            });
+
+            // Event delegation for the edit buttons
+            // Event delegation for the edit buttons
+            $('#tableBody').on('click', '.edit-row', function () {
+                const $row = $(this).closest('tr');
+                const $columns = $row.find('td');
+                const rowData = [];
+
+                // Extract the data from the row
+                $columns.each(function () {
+                    rowData.push($(this).text());
+                });
+
+                // Populate the form fields with the row data
+                $('#firstSelect').val(rowData[1]);
+                $('#lastSelect').val(rowData[2]);
+                $('#handleSelect').val(rowData[3]);
+                $('#statusSelect').val(rowData[4]); // This line sets the status select
+
+                // Remove the row from the table
+                $row.remove();
+                saveTableData();
+            });
+
+        });
+    </script>
+</body>
+
+</html>

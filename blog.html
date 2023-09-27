@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link href="//fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700;800;900&amp;display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="about.css"> -->
+    <link rel="stylesheet" href="blog.css">
+    <!-- <link href="about.html" /> -->
+    <title>Document</title>
+</head>
+<script src="javascript.js">
+
+</script>
+<style>
+    body {
+        background-color: #FFFF;
+    }
+
+    .dark-mode {
+        background-color: #19211E;
+    }
+
+    #theme-switch {
+        cursor: pointer;
+        position: relative;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        width: 25px;
+        background: url('https://awik.io/demo/sun.svg');
+        height: 25px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+
+
+    }
+
+    #theme-switch:checked {
+        background: url('https://awik.io/demo/moon.svg');
+
+    }
+</style>
+
+<body>
+
+    <div>
+        <!-- Header section -->
+
+        <section>
+            <header id="site-header" class="main-header fixed-top">
+                <div class="container ">
+                    <nav class="navbar navbar-expand-lg navbar-light">
+
+                        <h1 style="display: flex; flex-direction: row;">
+                            <a class="header-dark-mode-title-style" href="intex.html"
+                                style="color: #060606; text-decoration: none;">
+                                <span style="color: #54B963;">L</span>aundries
+
+                            </a>
+
+                        </h1>
+
+                        <div class="mobile-switch-icon">
+                            <input class="dark-mode-switch-icon-stye" id="theme-switch" type="checkbox" checked
+                                data-toggle="toggle" onclick="darkMode()" />
+
+                        </div>
+                        <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon fa icon-expand"></span>
+                        </button>
+
+                        <div class="collapse  navbar-collapse " id="navbarScroll" style="justify-content: end;">
+
+                            <ul class="navbar-nav  my-2 my-lg-0 navbar-nav-scroll ">
+                                <li>
+                                    <a href="intex.html" class=" nav-link nav-items-color-style  active"
+                                        style="color: #54B963;">Home</a>
+                                </li>
+                                <li><a href="about.html" class="nav-link  nav-items-color-style ">About</a>
+                                </li>
+                                <li><a href="service.html" class="nav-link  nav-items-color-style ">Services</a></li>
+                                <!-- <li>
+                                    <a href="#" class="nav-link  nav-items-color-style  
+                  ">Pages</a>
+
+                                </li> -->
+
+                                <li id="menu-item-24"
+                                class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children dropdown nav-item nav-item-24">
+                                <a href="#" class="nav-link nav-items-color-style active dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true"
+                                  aria-expanded="false">Pages</a>
+                                <ul class="dropdown-menu depth_0">
+                                  <li id="menu-item-25"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-25"><a
+                                      href="blog.html" class="dropdown-item ">Blog page</a></li>
+                                  <li id="menu-item-28"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-16 current_page_item nav-item nav-item-28">
+                                    <a href="element.html" class="dropdown-item">Elements
+                                      page</a></li>
+                                  <li id="menu-item-26"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-26"><a
+                                      href="landing.html" class="dropdown-item ">Landing
+                                      page</a></li>
+                                  <li id="menu-item-29"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-29"><a
+                                      href="404.html" class="dropdown-item ">404 page</a></li>
+                                </ul>
+                              </li>
+              
+                                <li><a href="contact.html" class="nav-link  nav-items-color-style ">Contact</a></li>
+                            </ul>
+                            <!-- <input id="theme-switch" type="checkbox"> -->
+                            <ul class="navbar-nav">
+
+                                <form class="d-flex search-header ms-lg-2 ml-5">
+                                    <input class="form-control input-style dark-mode-header-input"
+                                        style="border: 1px solid #eee;" type="search" placeholder="Enter Keyword..."
+                                        aria-label="Search" required="">
+                                    <button class="btn btn-style" type="submit"><i
+                                            class="fas  fa fa-search"></i></button>
+                                </form>
+
+                            </ul>
+                            <div class="web-switch-icon mt-2" style="margin-left: 10px;">
+                                <input class="dark-mode-switch-icon-stye" id="theme-switch" type="checkbox" checked
+                                    data-toggle="toggle" onclick="darkMode()" />
+
+                            </div>
+                        </div>
+
+                    </nav>
+                </div>
+            </header>
+
+        </section>
+
+        <!-- Header section -->
+
+        <!-- Slider section -->
+
+        <section class="about-main-section py-5">
+            <style>
+                .about-main-section {
+                    background-image: url('https://wp.w3layouts.com/laundries/wp-content/themes/laundries/assets/images/inner-banner.jpg');
+                }
+            </style>
+            <div class=" py-lg-5">
+                <div class="container pt-5 pb-sm-4 pb-2" style="text-align: center;">
+
+
+                    <h4 class="about-text-title font-weight-bold pt-5">Blog</h4>
+
+                    <ul class="image-section-ul ">
+                        <a class="image-a-style" href="intex.html" rel="">Home</a>&nbsp;&nbsp;»&nbsp;&nbsp;Blog page
+                    </ul>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Slider section -->
+
+        <section class="w3l-blogpost-content py-5">
+            <div class="container py-lg-5 py-md-4 py-2">
+                <div class="row BlogHomeLayout">
+
+
+                    <div class="col-lg-8 pe-lg-4">
+
+                        <div class="row blog-bg-sec">
+
+
+                            <div class="col-md-6 grids5-info mt-4">
+
+                                <article id="post-1"
+                                    class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-business">
+
+                                    <a href="#">
+
+                                    </a><a class="post-thumbnail" href="#" aria-hidden="true" tabindex="-1">
+                                        <img width="640" height="426"
+                                            src="https://wp.w3layouts.com/laundries/wp-content/uploads/sites/67/2022/03/blog6.jpg"
+                                            class="attachment-post-thumbnail size-post-thumbnail wp-post-image"
+                                            alt="Hello world!" decoding="async"
+                                            srcset="https://wp.w3layouts.com/laundries/wp-content/uploads/sites/67/2022/03/blog6.jpg 640w, https://wp.w3layouts.com/laundries/wp-content/uploads/sites/67/2022/03/blog6-300x200.jpg 300w, https://wp.w3layouts.com/laundries/wp-content/uploads/sites/67/2022/03/blog6-360x240.jpg 360w"
+                                            sizes="(max-width: 640px) 100vw, 640px"> </a>
+
+
+
+                                    <div class="blog-info-grid">
+
+                                        <div class="dark-mode-blog-card-border" style="
+            border: 1px solid #eee;
+            height: 240px;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            ">
+                                            <div class="d-flex align-items-center  p-3 mt-4">
+                                                <i class="fas  fa fa-user-circle" aria-hidden="true"
+                                                    style="color: #54B963; font-size: 14px">
+
+                                                </i>
+
+                                                <a href="#" style="
+                color: #B7B7B7;
+                text-decoration: none;
+                margin-left: 8px;
+                ">
+                                                    By W3Layouts
+                                                </a>
+                                                <span class="mx-2" style="color: #B7B7B7;">/</span>
+                                                <h5>
+                                                    <i class="fas  fa fa-calendar" aria-hidden="true"
+                                                        style="color: #54B963; font-size: 14px">
+
+                                                        <span style="
+                    color: #B7B7B7;
+                    margin-left: 12px;
+                    font-size: 18px;
+                    ">
+                                                            March 23, 2022
+                                                        </span>
+                                                    </i>
+                                                </h5>
+                                            </div>
+
+                                            <h4>
+                                                <a href="#" class="p-3 blog-title">
+                                                    Hello world!
+                                                </a>
+                                            </h4>
+
+                                            <div class="blog-info p-3 mt-2 ">
+                                                <a href="#" class="blog-btn-style">
+                                                    Read More
+                                                    <b>
+                                                        <i class="fas  fa fa-arrow-right" aria-hidden="true"
+                                                            style=" font-size: 16px; margin-left: 12px">
+
+                                                        </i>
+                                                    </b>
+                                                </a>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+
+                                </article>
+
+                            </div>
+
+
+                            <div class="col-md-6 grids5-info mt-4">
+
+                                <article id="post-52"
+                                    class="post-52 post type-post status-publish format-standard has-post-thumbnail hentry category-laundry">
+
+                                    <a
+                                        href="https://wp.w3layouts.com/laundries/2022/03/04/dry-cleaning-saves-money-in-the-long-run/">
+
+                                    </a><a class="post-thumbnail"
+                                        href="https://wp.w3layouts.com/laundries/2022/03/04/dry-cleaning-saves-money-in-the-long-run/"
+                                        aria-hidden="true" tabindex="-1">
+                                        <img width="640" height="426"
+                                            src="https://wp.w3layouts.com/laundries/wp-content/uploads/sites/67/2022/03/blog5.jpg"
+                                            class="attachment-post-thumbnail size-post-thumbnail wp-post-image"
+                                            alt="Dry cleaning saves money in the long run" decoding="async"
+                                            loading="lazy"
+                                            srcset="https://wp.w3layouts.com/laundries/wp-content/uploads/sites/67/2022/03/blog5.jpg 640w, https://wp.w3layouts.com/laundries/wp-content/uploads/sites/67/2022/03/blog5-300x200.jpg 300w, https://wp.w3layouts.com/laundries/wp-content/uploads/sites/67/2022/03/blog5-360x240.jpg 360w"
+                                            sizes="(max-width: 640px) 100vw, 640px"> </a>
+
+
+
+                                    <div class="blog-info-grid">
+
+                                        <div class="dark-mode-blog-card-border" style="
+            border: 1px solid #eee;
+            height: 240px;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            ">
+                                            <div class="d-flex align-items-center  p-3 mt-4">
+                                                <i class="fas  fa fa-user-circle" aria-hidden="true"
+                                                    style="color: #54B963; font-size: 14px">
+
+                                                </i>
+
+                                                <a href="#" style="
+                color: #B7B7B7;
+                text-decoration: none;
+                margin-left: 8px;
+                ">
+                                                    By W3Layouts
+                                                </a>
+                                                <span class="mx-2" style="color: #B7B7B7;">/</span>
+                                                <h5>
+                                                    <i class="fas  fa fa-calendar" aria-hidden="true"
+                                                        style="color: #54B963; font-size: 14px">
+
+                                                        <span style="
+                    color: #B7B7B7;
+                    margin-left: 12px;
+                    font-size: 18px;
+                    ">
+                                                            March 23, 2022
+                                                        </span>
+                                                    </i>
+                                                </h5>
+                                            </div>
+
+                                            <h4>
+                                                <a href="#" class="p-3 blog-title">
+                                                    Hello world!
+                                                </a>
+                                            </h4>
+
+                                            <div class="blog-info p-3 mt-2 ">
+                                                <a href="#" class="blog-btn-style">
+                                                    Read More
+                                                    <b>
+                                                        <i class="fas  fa fa-arrow-right" aria-hidden="true"
+                                                            style=" font-size: 16px; margin-left: 12px">
+
+                                                        </i>
+                                                    </b>
+                                                </a>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+
+                                </article>
+
+                            </div>
+
+
+                            <div class="col-md-6 grids5-info mt-4">
+
+                                <article id="post-50"
+                                    class="post-50 post type-post status-publish format-standard has-post-thumbnail hentry category-laundry">
+
+                                    <a
+                                        href="https://wp.w3layouts.com/laundries/2022/03/04/power-laundry-service-at-its-best-2/">
+
+                                    </a><a class="post-thumbnail"
+                                        href="https://wp.w3layouts.com/laundries/2022/03/04/power-laundry-service-at-its-best-2/"
+                                        aria-hidden="true" tabindex="-1">
+                                        <img width="640" height="427"
+                                            src="https://wp.w3layouts.com/laundries/wp-content/uploads/sites/67/2022/03/blog3.jpg"
+                                            class="attachment-post-thumbnail size-post-thumbnail wp-post-image"
+                                            alt="Power laundry service at it’s best!" decoding="async" loading="lazy"
+                                            srcset="https://wp.w3layouts.com/laundries/wp-content/uploads/sites/67/2022/03/blog3.jpg 640w, https://wp.w3layouts.com/laundries/wp-content/uploads/sites/67/2022/03/blog3-300x200.jpg 300w, https://wp.w3layouts.com/laundries/wp-content/uploads/sites/67/2022/03/blog3-360x240.jpg 360w"
+                                            sizes="(max-width: 640px) 100vw, 640px"> </a>
+
+
+
+                                    <div class="blog-info-grid">
+
+                                        <div class="dark-mode-blog-card-border" style="
+            border: 1px solid #eee;
+            height: 240px;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            ">
+                                            <div class="d-flex align-items-center  p-3 mt-4">
+                                                <i class="fas  fa fa-user-circle" aria-hidden="true"
+                                                    style="color: #54B963; font-size: 14px">
+
+                                                </i>
+
+                                                <a href="#" style="
+                color: #B7B7B7;
+                text-decoration: none;
+                margin-left: 8px;
+                ">
+                                                    By W3Layouts
+                                                </a>
+                                                <span class="mx-2" style="color: #B7B7B7;">/</span>
+                                                <h5>
+                                                    <i class="fas  fa fa-calendar" aria-hidden="true"
+                                                        style="color: #54B963; font-size: 14px">
+
+                                                        <span style="
+                    color: #B7B7B7;
+                    margin-left: 12px;
+                    font-size: 18px;
+                    ">
+                                                            March 23, 2022
+                                                        </span>
+                                                    </i>
+                                                </h5>
+                                            </div>
+
+                                            <h4>
+                                                <a href="#" class="p-3 blog-title">
+                                                    Hello world!
+                                                </a>
+                                            </h4>
+
+                                            <div class="blog-info p-3 mt-2 ">
+                                                <a href="#" class="blog-btn-style">
+                                                    Read More
+                                                    <b>
+                                                        <i class="fas  fa fa-arrow-right" aria-hidden="true"
+                                                            style=" font-size: 16px; margin-left: 12px">
+
+                                                        </i>
+                                                    </b>
+                                                </a>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+
+                                </article>
+
+                            </div>
+
+
+                            <div class="col-md-6 grids5-info mt-4">
+
+                                <article id="post-48"
+                                    class="post-48 post type-post status-publish format-standard has-post-thumbnail hentry category-business">
+
+                                    <a
+                                        href="https://wp.w3layouts.com/laundries/2022/03/04/wedding-suit-deserves-special-treatment-2/">
+
+                                    </a><a class="post-thumbnail"
+                                        href="https://wp.w3layouts.com/laundries/2022/03/04/wedding-suit-deserves-special-treatment-2/"
+                                        aria-hidden="true" tabindex="-1">
+                                        <img width="640" height="426"
+                                            src="https://wp.w3layouts.com/laundries/wp-content/uploads/sites/67/2022/03/blog4.jpg"
+                                            class="attachment-post-thumbnail size-post-thumbnail wp-post-image"
+                                            alt="Wedding suit deserves special treatment" decoding="async"
+                                            loading="lazy"
+                                            srcset="https://wp.w3layouts.com/laundries/wp-content/uploads/sites/67/2022/03/blog4.jpg 640w, https://wp.w3layouts.com/laundries/wp-content/uploads/sites/67/2022/03/blog4-300x200.jpg 300w, https://wp.w3layouts.com/laundries/wp-content/uploads/sites/67/2022/03/blog4-360x240.jpg 360w"
+                                            sizes="(max-width: 640px) 100vw, 640px"> </a>
+
+
+
+                                    <div class="blog-info-grid">
+
+                                        <div class="dark-mode-blog-card-border" style="
+            border: 1px solid #eee;
+            height: 240px;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            ">
+                                            <div class="d-flex align-items-center  p-3 mt-4">
+                                                <i class="fas  fa fa-user-circle" aria-hidden="true"
+                                                    style="color: #54B963; font-size: 14px">
+
+                                                </i>
+
+                                                <a href="#" style="
+                color: #B7B7B7;
+                text-decoration: none;
+                margin-left: 8px;
+                ">
+                                                    By W3Layouts
+                                                </a>
+                                                <span class="mx-2" style="color: #B7B7B7;">/</span>
+                                                <h5>
+                                                    <i class="fas  fa fa-calendar" aria-hidden="true"
+                                                        style="color: #54B963; font-size: 14px">
+
+                                                        <span style="
+                    color: #B7B7B7;
+                    margin-left: 12px;
+                    font-size: 18px;
+                    ">
+                                                            March 23, 2022
+                                                        </span>
+                                                    </i>
+                                                </h5>
+                                            </div>
+
+                                            <h4>
+                                                <a href="#" class="p-3 blog-title">
+                                                    Hello world!
+                                                </a>
+                                            </h4>
+
+                                            <div class="blog-info p-3 mt-2 ">
+                                                <a href="#" class="blog-btn-style">
+                                                    Read More
+                                                    <b>
+                                                        <i class="fas  fa fa-arrow-right" aria-hidden="true"
+                                                            style=" font-size: 16px; margin-left: 12px">
+
+                                                        </i>
+                                                    </b>
+                                                </a>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+
+                                </article>
+
+                            </div>
+
+
+                            <div class="col-md-6 grids5-info mt-4">
+
+                                <article id="post-46"
+                                    class="post-46 post type-post status-publish format-standard has-post-thumbnail hentry category-laundry">
+
+                                    <a
+                                        href="https://wp.w3layouts.com/laundries/2022/03/04/how-to-get-stains-out-of-dry-clean-2/">
+
+                                    </a><a class="post-thumbnail"
+                                        href="https://wp.w3layouts.com/laundries/2022/03/04/how-to-get-stains-out-of-dry-clean-2/"
+                                        aria-hidden="true" tabindex="-1">
+                                        <img width="640" height="426"
+                                            src="https://wp.w3layouts.com/laundries/wp-content/uploads/sites/67/2022/03/blog2.jpg"
+                                            class="attachment-post-thumbnail size-post-thumbnail wp-post-image"
+                                            alt="How to get stains out of dry clean" decoding="async" loading="lazy"
+                                            srcset="https://wp.w3layouts.com/laundries/wp-content/uploads/sites/67/2022/03/blog2.jpg 640w, https://wp.w3layouts.com/laundries/wp-content/uploads/sites/67/2022/03/blog2-300x200.jpg 300w, https://wp.w3layouts.com/laundries/wp-content/uploads/sites/67/2022/03/blog2-360x240.jpg 360w"
+                                            sizes="(max-width: 640px) 100vw, 640px"> </a>
+
+
+
+                                    <div class="blog-info-grid">
+
+                                        <div class="dark-mode-blog-card-border" style="
+            border: 1px solid #eee;
+            height: 240px;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            ">
+                                            <div class="d-flex align-items-center  p-3 mt-4">
+                                                <i class="fas  fa fa-user-circle" aria-hidden="true"
+                                                    style="color: #54B963; font-size: 14px">
+
+                                                </i>
+
+                                                <a href="#" style="
+                color: #B7B7B7;
+                text-decoration: none;
+                margin-left: 8px;
+                ">
+                                                    By W3Layouts
+                                                </a>
+                                                <span class="mx-2" style="color: #B7B7B7;">/</span>
+                                                <h5>
+                                                    <i class="fas  fa fa-calendar" aria-hidden="true"
+                                                        style="color: #54B963; font-size: 14px">
+
+                                                        <span style="
+                    color: #B7B7B7;
+                    margin-left: 12px;
+                    font-size: 18px;
+                    ">
+                                                            March 23, 2022
+                                                        </span>
+                                                    </i>
+                                                </h5>
+                                            </div>
+
+                                            <h4>
+                                                <a href="#" class="p-3 blog-title">
+                                                    Hello world!
+                                                </a>
+                                            </h4>
+
+                                            <div class="blog-info p-3 mt-2 ">
+                                                <a href="#" class="blog-btn-style">
+                                                    Read More
+                                                    <b>
+                                                        <i class="fas  fa fa-arrow-right" aria-hidden="true"
+                                                            style=" font-size: 16px; margin-left: 12px">
+
+                                                        </i>
+                                                    </b>
+                                                </a>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+
+                                </article>
+
+                            </div>
+
+                            <!-- </article>#post-46 -->
+                            <div class="col-md-6 grids5-info mt-4">
+
+                                <article id="post-44"
+                                    class="post-44 post type-post status-publish format-standard has-post-thumbnail hentry category-business">
+
+                                    <a
+                                        href="https://wp.w3layouts.com/laundries/2022/03/04/power-laundry-service-at-its-best/">
+
+                                    </a><a class="post-thumbnail"
+                                        href="https://wp.w3layouts.com/laundries/2022/03/04/power-laundry-service-at-its-best/"
+                                        aria-hidden="true" tabindex="-1">
+                                        <img width="640" height="426"
+                                            src="https://wp.w3layouts.com/laundries/wp-content/uploads/sites/67/2022/03/blog1.jpg"
+                                            class="attachment-post-thumbnail size-post-thumbnail wp-post-image"
+                                            alt="Power laundry service at it’s best!" decoding="async" loading="lazy"
+                                            srcset="https://wp.w3layouts.com/laundries/wp-content/uploads/sites/67/2022/03/blog1.jpg 640w, https://wp.w3layouts.com/laundries/wp-content/uploads/sites/67/2022/03/blog1-300x200.jpg 300w, https://wp.w3layouts.com/laundries/wp-content/uploads/sites/67/2022/03/blog1-360x240.jpg 360w"
+                                            sizes="(max-width: 640px) 100vw, 640px"> </a>
+
+
+
+                                    <div class="blog-info-grid">
+
+                                        <div class="dark-mode-blog-card-border" style="
+            border: 1px solid #eee;
+            height: 240px;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            ">
+                                            <div class="d-flex align-items-center  p-3 mt-4">
+                                                <i class="fas  fa fa-user-circle" aria-hidden="true"
+                                                    style="color: #54B963; font-size: 14px">
+
+                                                </i>
+
+                                                <a href="#" style="
+                color: #B7B7B7;
+                text-decoration: none;
+                margin-left: 8px;
+                ">
+                                                    By W3Layouts
+                                                </a>
+                                                <span class="mx-2" style="color: #B7B7B7;">/</span>
+                                                <h5>
+                                                    <i class="fas  fa fa-calendar" aria-hidden="true"
+                                                        style="color: #54B963; font-size: 14px">
+
+                                                        <span style="
+                    color: #B7B7B7;
+                    margin-left: 12px;
+                    font-size: 18px;
+                    ">
+                                                            March 23, 2022
+                                                        </span>
+                                                    </i>
+                                                </h5>
+                                            </div>
+
+                                            <h4>
+                                                <a href="#" class="p-3 blog-title">
+                                                    Hello world!
+                                                </a>
+                                            </h4>
+
+                                            <div class="blog-info p-3 mt-2 ">
+                                                <a href="#" class="blog-btn-style">
+                                                    Read More
+                                                    <b>
+                                                        <i class="fas  fa fa-arrow-right" aria-hidden="true"
+                                                            style=" font-size: 16px; margin-left: 12px">
+
+                                                        </i>
+                                                    </b>
+                                                </a>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+
+                                </article>
+
+                            </div>
+
+                            <!-- </article>#post-44 -->
+                        </div>
+
+                        <!-- pagination -->
+                        <div class="pagination-wrapper mt-4">
+                            <nav aria-label="Page navigation example">
+                                <ul class="page-pagination d-flex justify-content-center justify-content-center">
+                                    <ul class="page-numbers">
+                                        <li><span aria-current="page" class="page-numbers current">1</span></li>
+                                        <li><a class="page-numbers"
+                                                href="#">2</a></li>
+                                        <li><a class="next page-numbers"
+                                                href="#">Next</a>
+                                        </li>
+                                    </ul>
+                                </ul>
+                            </nav>
+                        </div>
+
+                        <!-- //pagination -->
+                    </div>
+
+
+
+                    <div class="sidebar-side col-lg-4 col-md-12 col-sm-12 mt-lg-0 mt-5 ps-lg-5">
+                        <div class="sidebar right-sidebar">
+                            <aside id="secondary" class="widget-area">
+                                <section id="search-2" class="widget widget_search widget-card-border">
+                                    <form role="search" method="get" class="search-form d-flex flex-direction-row"
+                                        action="#">
+                                        <label>
+                                            <span class="screen-reader-text">Search for:</span>
+                                            <input type="search" class="search-field" placeholder="Search …" value=""
+                                                name="s">
+                                        </label>
+                                        <input type="submit" class="search-submit" value="Search">
+                                    </form>
+                                </section>
+                                <section id="recent-posts-2" class="widget  widget-card-border">
+                                    <h2 class="widget-title">Recent Posts</h2>
+                                    <ul>
+                                        <li>
+                                            <a class="wigget-a-style" href="#">Hello world!</a>
+                                        </li>
+                                        <li>
+                                            <a class="wigget-a-style" href="#">Dry
+                                                cleaning saves money in the long run</a>
+                                        </li>
+                                        <li>
+                                            <a class="wigget-a-style" href="#">Power
+                                                laundry service at it’s best!</a>
+                                        </li>
+                                        <li>
+                                            <a class="wigget-a-style" href="#">Wedding
+                                                suit deserves special treatment</a>
+                                        </li>
+                                        <li>
+                                            <a class="wigget-a-style" href="#">How
+                                                to get stains out of dry clean</a>
+                                        </li>
+                                    </ul>
+
+                                </section>
+
+                                <section id="recent-comments-2" class="widget widget-card-border">
+                                    <h2 class="widget-title">Recent Comments</h2>
+                                    <ul id="">
+                                        <li class="">
+                                            <span class="comment-author-link"><a href="#" class="wigget-a-style-2"
+                                                    rel="#">A WordPress Commenter</a>
+                                            </span> on <a class="wigget-a-style-2" href="#">Hello world!</a>
+                                        </li>
+                                        <li class=""><span class="comment-author-link"><a href="#"
+                                                    class="wigget-a-style-2" rel="#">A WordPress Commenter</a></span> on
+                                            <a class="wigget-a-style-2" href="#">Hello
+                                                world!</a></li>
+                                    </ul>
+                                </section>
+                                <section id="archives-2" class="widget widget-card-border">
+                                    <h2 class="widget-title">Archives</h2>
+                                    <ul>
+                                        <li><a class="wigget-a-style" href="#">March 2022</a></li>
+                                        <li><a class="wigget-a-style" href="#">February 2022</a></li>
+                                    </ul>
+
+                                </section>
+
+                                <section id="categories-2" class="widget widget-card-border">
+                                    <h2 class="widget-title">Categories</h2>
+                                    <ul>
+                                        <li class="cat-item cat-item-2"><a class="wigget-a-style" href="#">Business</a>
+                                        </li>
+                                        <li class="cat-item cat-item-3"><a class="wigget-a-style" href="#">Laundry</a>
+                                        </li>
+                                        <li class="cat-item cat-item-1"><a class="wigget-a-style"
+                                                href="#">Uncategorized</a>
+                                        </li>
+                                    </ul>
+
+                                </section>
+                                <section id="meta-2" class="widget widget-card-border">
+                                    <h2 class="widget-title">Meta</h2>
+                                    <ul>
+                                        <li><a class="wigget-a-style" href="#">Log in</a></li>
+                                        <li><a class="wigget-a-style" href="#">Entries feed</a></li>
+                                        <li><a class="wigget-a-style" href="#">Comments
+                                                feed</a></li>
+
+                                        <li><a class="wigget-a-style" href="#">WordPress.org</a></li>
+                                    </ul>
+
+                                </section>
+                            </aside><!-- #secondary -->
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </section>
+        <!-- Footer section -->
+
+        <section style=" background-color: #0e0e0e">
+            <div class="container pt-md-5 pt-4 ">
+                <!-- <div> -->
+                <div class=" d-flex align-items-center justify-content-between mb-5 footer-contact-div">
+                    <h6 class="footer-sub-title">Contact Us</h6>
+
+                    <div class=" mt-5"
+                        style="width: 200px; display: flex; flex-direction: row; justify-content: space-between;">
+                        <span
+                            class="footer-icon-span-style d-flex align-items-center rounded-circle justify-content-center"
+                            style="width: 40px; height: 40px; background: #fff;">
+                            <i class="rounded-circle fas fa fa-facebook" style="color: #000; font-size: 22px;"
+                                aria-hidden="true"></i>
+                        </span>
+                        <span
+                            class="footer-icon-span-style d-flex align-items-center rounded-circle justify-content-center"
+                            style="width: 40px; height: 40px; background: #fff;">
+                            <i class=" rounded-circle fas fa fa-twitter" style="color: #000; font-size: 22px;"
+                                aria-hidden="true"></i>
+                        </span><span
+                            class="footer-icon-span-style d-flex align-items-center rounded-circle justify-content-center"
+                            style="width: 40px; height: 40px; background: #fff;">
+                            <i class=" rounded-circle fas fa fa-instagram" style="color: #000; font-size: 22px;"
+                                aria-hidden="true"></i>
+                        </span><span
+                            class="footer-icon-span-style d-flex align-items-center rounded-circle justify-content-center"
+                            style="width: 40px; height: 40px; background: #fff;">
+                            <i class=" rounded-circle fas fa fa-linkedin-square" style="color: #000; font-size: 22px;"
+                                aria-hidden="true"></i>
+                        </span>
+                    </div>
+                </div>
+
+                <div class=" row " style="margin-top: 120px;">
+                    <div class="col-lg-3 col-sm-6 ">
+                        <div class="address-div">
+                            <h5>
+                                10001 Alleghany st, 5th Avenue, 235 Terry, <br /> London.
+                            </h5>
+
+                            <h5 class="mt-5">
+                                Everyday: <span> 7 AM - 8 PM</span>
+                            </h5>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-sm-6 ">
+                        <div class="address-div">
+                            <h5 style="font-weight: bold">Phone</h5>
+                            <h5 class="phone-number-text mt-2">+1(21) 112 7368</h5>
+                        </div>
+
+                        <div class="address-div mt-4">
+                            <h5 style=" color: #FFFFFF">E-mail</h5>
+                            <h5 class="email-text mt-1"> laundries@mail.com</h5>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 col-sm-5 ">
+                        <div class="address-div ">
+                            <h5 style=" font-weight: bold">Support Links</h5>
+                        </div>
+                    </div>
+
+                    <div class="address-div col-lg-4 col-md-6 col-sm-7">
+                        <h5 style=" font-weight: bold">Subscribe Here</h5>
+                        <form action="" class="footer-input-style d-flex mt-3  mb-4">
+                            <input class="footer-input-style footer-input-dark-style" type="email" name="email"
+                                placeholder="Email Address" required="" />
+                            <button class="footer-button-style">
+                                <span>
+                                    <i class="fas fa fa-paper-plane"></i>
+                                </span>
+                            </button>
+                        </form>
+                        <p style="color: #707070;">
+                            Subscribe to our mailing list and get updates to your email
+                            inbox.
+                        </p>
+                    </div>
+                    <div class="pt-3">
+                        <p style=" color: #FFFFFF ; text-align: center">
+                            © 2023 Laundries. All Rights Reserved | WordPress Theme by
+                            <a href="#" style=" color: #54B963 ; text-decoration: none ; font-weight: bold ; ">
+                                W3Layouts.
+                            </a>
+                        </p>
+                    </div>
+                </div>
+                <!-- </div> -->
+            </div>
+        </section>
+
+        <!-- Footer section -->
+        <button class="top-move-btn" title="Go to top" style="display: block; ">
+            <a href="#" style="text-decoration: none ; color: #FFFFFF;">
+                <span class="fas fa fa-arrow-up" aria-hidden="true"></span>
+            </a>
+        </button>
+
+    </div>
+
+
+
+
+</body>
+
+</html>

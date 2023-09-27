@@ -1,0 +1,232 @@
+.about-main-section {
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -ms-background-size: cover;
+  position: relative;
+  z-index: 1;
+}
+
+.about-text-title {
+  margin-bottom: 2px;
+  font-size: 36px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+}
+
+.image-section-ul {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 15px;
+  line-height: 1.5;
+  font-weight: 600;
+  color: #ffffff;
+  text-transform: capitalize;
+  background: transparent;
+}
+
+.image-a-style {
+  background-color: transparent;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.image-a-style:hover {
+  color: #54b963;
+}
+
+a.post-thumbnail img {
+  height: 250px;
+  transition: 0.3s ease-in-out;
+  border-radius: 8px 8px 0 0;
+}
+
+.post {
+  margin: 0 0 1.5em;
+}
+
+nav {
+  margin: 0;
+  padding: 0;
+}
+
+ul.page-numbers li {
+  display: inline-block;
+}
+
+ul.page-pagination li span.current {
+  display: block;
+  padding: 10px 18px;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 50px;
+  font-weight: 700;
+  background: #54b963;
+  transition: background-color 0.15s linear, color 0.15s linear;
+  box-shadow: 0 25px 98px 0 rgba(19, 19, 19, 0.03);
+}
+
+ul.page-pagination li a.page-numbers, ul.page-pagination li a.next {
+    display: block;
+    padding: 10px 18px;
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    color: #060606;
+    transition: background-color .15s linear, color .15s linear;
+    box-shadow: 0 25px 98px 0 rgba(19, 19, 19, 0.03);
+}
+
+.widget {
+  margin-bottom: 40px;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+ul#recentcomments li {
+  margin: 20px 0;
+}
+
+form.search-form {
+  position: relative;
+  width: 100%;
+}
+
+.search-form label {
+  margin-bottom: 0;
+  width: 100%;
+}
+
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
+}
+
+input.search-field {
+  line-height: 27px;
+  outline: none;
+  float: left;
+  border-right: none;
+  border-radius: 0px;
+  width: 100%;
+  color: #060606;
+  background: #ffffff;
+  padding: 4px 4px 4px 4px;
+  font-size: 18px;
+  height: 50px;
+  border: 1px solid #eee;
+  display: block;
+  border-radius: 4px;
+}
+
+body.dark-mode input.search-field {
+  color: #fff;
+  background: #19211e;
+
+
+}
+
+input.search-submit {
+  display: inline-block;
+  font-weight: 400;
+  color: #212529;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  color: #fff;
+  font-size: 16px;
+  letter-spacing: 0px;
+  border: none;
+  height: 50px;
+  /* display: inline-block; */
+  cursor: pointer;
+  background: #54b963;
+  margin-right: 12px;
+  /* position: absolute; */
+}
+
+.widget-card-border{
+    border: 1px solid #eee;
+}
+
+.widget-title {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 22px;
+  line-height: 32px;
+  color: #060606;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-transform: capitalize;
+}
+
+body.dark-mode .widget-title {
+  color: #ffffff;
+}
+
+.wigget-a-style {
+  width: 100%;
+  transition: 0.3s ease;
+  position: relative;
+  color: #575757;
+  font-size: 13px;
+  font-weight: 500;
+  display: block;
+  padding: 5px 5px 0px 5px;
+  line-height: 26px;
+  text-decoration: none;
+}
+
+body.dark-mode .wigget-a-style {
+  color: #ffffff;
+}
+
+.wigget-a-style-2 {
+  font-size: 13px;
+  color: #54b963;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+/* width: 100%;
+    transition: .3s ease;
+    position: relative;
+    color: var(--heading-color);
+    font-size: 16px;
+    font-weight: 500;
+    display: block;
+    padding: 10px 15px 0px 20px;
+    line-height: 26px; */
+
+
+
+    li::marker {
+   color: #060606;
+  }
+  

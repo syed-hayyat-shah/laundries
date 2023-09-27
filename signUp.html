@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link href="//fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700;800;900&amp;display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="signUp.css">
+    <!-- <link href="about.html" /> -->
+
+    <link rel="stylesheet" href="codemirror-5.63.1/lib/codemirror.css">
+    <script src="codemirror-5.63.1/lib/codemirror.js"></script>
+    <title>Document</title>
+
+    <!-- http://192.168.1.X/desktop/website/index.html -->
+</head>
+<script src="javascript.js">
+</script>
+
+<style>
+    /* Style for input fields */
+    .form-control {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 100%;
+        margin-bottom: 15px;
+        font-size: 16px;
+    }
+
+    /* Style for error messages */
+    .error-message {
+        color: red;
+        font-size: 14px;
+    }
+
+    /* Style for the "Register" button */
+    .btnRegister {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 18px;
+    }
+
+    /* Style for the "Register" button on hover */
+    .btnRegister:hover {
+        background-color: #0056b3;
+    }
+</style>
+
+<body>
+
+    <div>
+        <!-- Header section -->
+        <div class="container register">
+            <div class="row">
+                <div class="col-md-3 register-left text-center align-items-center">
+
+                    <h3>Welcome To </h3>
+                    <h3>SignUp Page</h3>
+                    <h3>please Emter Your Information</h3>
+
+                </div>
+                <div class="col-md-9 register-right">
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <h3 class="register-heading">Sign Up</h3>
+                            <div class="row register-form">
+                                <div class="col-md-12">
+                                    <form id="registrationForm" action="intex.html" method="post">
+                                        <!-- Rest of the form fields as before -->
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Name *" value=""
+                                                required id="name" pattern="[A-Za-z\s]+"
+                                                title="Only letters and spaces are allowed" />
+                                            <div id="nameError" class="error-message"></div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <input type="email" class="form-control" placeholder="Email *" value=""
+                                                required id="email" />
+                                            <div id="emailError" class="error-message"></div>
+                                        </div>
+
+                                        <div class="form-group ">
+                                            <input type="password" class="form-control" placeholder="Password *"
+                                                value="" required pattern=".{8,}"
+                                                title="Password must be at least 8 characters long" id="password" />
+                                            <div id="passwordError" class="error-message"></div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="maxl" id="input[name=gender]:checked">
+                                                <label class="radio inline">
+                                                    <input type="radio" name="gender" value="male" checked required>
+                                                    <span> Male </span>
+                                                </label>
+                                                <label class="radio inline">
+                                                    <input type="radio" name="gender" value="female" required>
+                                                    <span>Female </span>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group mt-5">
+                                            <label for="profileImage">Profile Image:</label>
+                                            <input type="file" class="form-control-file" id="profileImageInput"
+                                                accept="image/*" required />
+                                            <div id="profileImageError" class="error-message"></div>
+                                            <!-- Add the preview image element -->
+                                            <img id="previewImage" src="#" alt="Preview"
+                                                style="max-width: 200px; max-height: 200px; display: none;">
+                                        </div>
+
+                                        <!-- Other form fields here -->
+
+                                        <input type="button" class="btnRegister" value="Register"
+                                            onclick="validateForm()" />
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <script>
+            function checkRegistrationSuccess() {
+                const registrationSuccess = sessionStorage.getItem("registrationSuccess");
+                return registrationSuccess === "true";
+            }
+
+            // Function to set the registration success flag in the session
+            function setRegistrationSuccess(success) {
+                sessionStorage.setItem("registrationSuccess", success ? "true" : "false");
+            }
+            async function validateForm() {
+                // Select all required input elements inside the form
+                const requiredInputs = document.querySelectorAll(
+                    "#registrationForm [required]"
+                );
+                const userData = {
+                    userId: "", // Assign values as needed
+                    name: "",
+                    email: "",
+                    password: "",
+                    gender: "",
+                    status: false,
+                    data: []  // Initialize an empty array for tasks
+                };
+                // Reset all error messages
+                document.querySelectorAll(".error-message").forEach((error) => {
+                    error.textContent = "";
+                });
+
+                // Flag to check if any required field is empty
+                let isEmpty = false;
+
+                // Check each required input for empty value and display error messages
+                requiredInputs.forEach((input) => {
+                    if (input.value.trim() === "") {
+                        isEmpty = true;
+                        const fieldName = input.getAttribute("placeholder");
+                        const errorElement = document.getElementById(input.id + "Error");
+                        errorElement.textContent = `Please enter your ${fieldName}`;
+                    }
+                });
+
+                // Check if the email already exists in localStorage
+                const email = document.getElementById("email").value;
+                if (localStorage.getItem(email)) {
+                    const errorElement = document.getElementById("emailError");
+                    errorElement.textContent = "This email is already registered.";
+                    isEmpty = true;
+                }
+                // Display alert if any required field is empty
+                if (isEmpty) {
+                    return;
+                }
+                const tasksAvailable = localStorage.getItem("tasksAvailable");
+
+                if (tasksAvailable === "true") {
+                    // Tasks are available, load them from local storage
+                    const storedTasks = JSON.parse(localStorage.getItem("tasks"));
+
+                    // Add storedTasks to the userData.data array
+                    userData.data = storedTasks;
+
+                    // Clear the flag indicating tasks are available
+                    localStorage.removeItem("tasksAvailable");
+                }
+
+                // registration.js
+
+                document
+                    .getElementById("registrationForm")
+                    .addEventListener("submit", function (event) {
+                        event.preventDefault();
+
+                        const email = document.getElementById("email").value;
+                        const password = document.getElementById("password").value;
+                    });
+
+                // If all required fields are filled out, submit the form and redirect to index.html
+                if (!isEmpty) {
+                    // Create an object to store user data
+                    const userData = {
+                        userId: generateUniqueId(),
+                        name: document.getElementById("name").value,
+                        email: document.getElementById("email").value,
+                        password: document.getElementById("password").value,
+                        gender: document.querySelector('input[name="gender"]:checked').value,
+                        status: false,
+                        data: []
+                        // Add other fields as needed
+                    };
+                    const existingUsers = JSON.parse(localStorage.getItem("users")) || [];
+                    const profileImageInput = document.getElementById("profileImageInput");
+
+                    if (profileImageInput.files.length > 0) {
+                        // Get the selected file (assuming only one file is selected)
+                        const profileImageFile = profileImageInput.files[0];
+                        console.log({ profileImageFile });
+                        // Store the file as base64 data
+                        const reader = new FileReader();
+                        reader.onload = async function (event) {
+                            console.log("in if");
+                            userData.profileImage = event.target.result;
+                            console.log(userData.profileImage);
+                            await localStorage.setItem("userData", JSON.stringify(userData));
+                        };
+                        reader.readAsDataURL(profileImageFile);
+                    }
+                    // Assuming userData is an object containing user data
+
+                    existingUsers.push(userData);
+
+                    // Save the updated user data array back to local storage
+                    localStorage.setItem("users", JSON.stringify(existingUsers));
+
+                    localStorage.setItem(userData.email, JSON.stringify(userData));
+                    sessionStorage.setItem("currentUserEmail", userData.email);
+
+                    // Store the userId in sessionStorage
+                    sessionStorage.setItem("userId", userData.userId);
+
+                    console.log({ userData });
+                    // Set registration success flag to true
+                    setRegistrationSuccess(true);
+
+                    // Redirect to the login page
+                    window.location.href = "login.html";
+                }
+            }
+
+
+
+            function generateUniqueId() {
+                const existingUsers = JSON.parse(localStorage.getItem("users")) || [];
+                let newUserId = 1;
+
+                if (existingUsers.length > 0) {
+                    // Find the maximum user ID and increment it to generate a new unique ID
+                    const maxUserId = Math.max(...existingUsers.map(user => parseInt(user.userId)));
+                    newUserId = maxUserId + 1;
+                }
+
+                return newUserId.toString();
+            }
+
+
+            // Function to handle image selection and preview
+            function handleImagePreview() {
+                const profileImageInput = document.getElementById("profileImageInput");
+                const previewImage = document.getElementById("previewImage");
+
+                profileImageInput.addEventListener("change", function () {
+                    const selectedFile = profileImageInput.files[0];
+                    if (selectedFile) {
+                        const reader = new FileReader();
+
+                        reader.onload = function (event) {
+                            previewImage.src = event.target.result;
+                            previewImage.style.display = "block"; // Show the preview image
+                        };
+
+                        reader.readAsDataURL(selectedFile);
+                    } else {
+                        previewImage.src = ""; // Clear the preview if no file is selected
+                        previewImage.style.display = "none"; // Hide the preview image
+                    }
+                });
+            }
+            // Call the function to handle image preview
+            handleImagePreview();
+        </script>
+
+
+</body>
+
+</html>

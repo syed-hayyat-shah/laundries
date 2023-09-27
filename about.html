@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link href="//fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700;800;900&amp;display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="blog.css">
+    <title>Document</title>
+</head>
+<script src="javascript.js">
+
+</script>
+<style>
+    body {
+        background-color: #FFFF;
+    }
+
+    .dark-mode {
+        background-color: #19211E;
+    }
+
+    #theme-switch {
+        cursor: pointer;
+        position: relative;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        width: 25px;
+        background: url('https://awik.io/demo/sun.svg');
+        height: 25px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+
+
+    }
+
+    #theme-switch:checked {
+        background: url('https://awik.io/demo/moon.svg');
+
+    }
+</style>
+<title>Slideshow Images</title>
+
+<body>
+    <script>
+          window.addEventListener("DOMContentLoaded", (event) => {
+            // Check if the user is logged in
+            const loggedIn = sessionStorage.getItem("loggedIn");
+            if (!loggedIn || loggedIn !== "true") {
+              // Redirect to the login page
+              window.location.href = "login.html";
+            }
+          });
+    </script>
+
+    <div>
+        <!-- Header section -->
+
+        <section>
+            <header id="site-header" class="main-header fixed-top">
+                <div class="container ">
+                    <nav class="navbar navbar-expand-lg navbar-light">
+
+                        <h1 style="display: flex; flex-direction: row;">
+                            <a class="header-dark-mode-title-style" href="intex.html"
+                                style="color: #060606; text-decoration: none;">
+                                <span style="color: #54B963;">L</span>aundries
+
+                            </a>
+
+                        </h1>
+
+                        <div class="mobile-switch-icon">
+                            <input class="dark-mode-switch-icon-stye" id="theme-switch" type="checkbox" checked
+                                data-toggle="toggle" onclick="darkMode()" />
+
+                        </div>
+                        <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon fa icon-expand"></span>
+                        </button>
+
+                        <div class="collapse  navbar-collapse " id="navbarScroll" style="justify-content: end;">
+
+                            <ul class="navbar-nav  my-2 my-lg-0 navbar-nav-scroll ">
+                                <li>
+                                    <a href="intex.html" class=" nav-link nav-items-color-style  active"
+                                        style="color: #54B963;">Home</a>
+                                </li>
+                                <li><a href="about.html" class="nav-link  nav-items-color-style ">About</a>
+                                </li>
+                                <li><a href="service.html" class="nav-link  nav-items-color-style ">Services</a></li>
+                                <!-- <li>
+                                    <a href="#" class="nav-link  nav-items-color-style">Pages</a>
+
+                                </li> -->
+                                <li id="menu-item-24"
+                                class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children dropdown nav-item nav-item-24">
+                                <a href="#" class="nav-link nav-items-color-style active dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true"
+                                  aria-expanded="false">Pages</a>
+                                <ul class="dropdown-menu depth_0">
+                                  <li id="menu-item-25"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-25"><a
+                                      href="blog.html" class="dropdown-item ">Blog page</a></li>
+                                  <li id="menu-item-28"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-16 current_page_item nav-item nav-item-28">
+                                    <a href="element.html" class="dropdown-item">Elements
+                                      page</a></li>
+                                  <li id="menu-item-26"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-26"><a
+                                      href="landing.html" class="dropdown-item ">Landing
+                                      page</a></li>
+                                  <li id="menu-item-29"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-29"><a
+                                      href="404.html" class="dropdown-item ">404 page</a></li>
+                                </ul>
+                              </li>
+              
+                                <li><a href="contact.html" class="nav-link  nav-items-color-style ">Contact</a></li>
+                            </ul>
+                            <!-- <input id="theme-switch" type="checkbox"> -->
+                            <ul class="navbar-nav">
+
+                                <form class="d-flex search-header ms-lg-2 ml-5">
+                                    <input class="form-control input-style dark-mode-header-input"
+                                        style="border: 1px solid #eee;" type="search" placeholder="Enter Keyword..."
+                                        aria-label="Search" required="">
+                                    <button class="btn btn-style" type="submit"><i
+                                            class="fas  fa fa-search"></i></button>
+                                </form>
+
+                            </ul>
+                            <div class="web-switch-icon mt-2" style="margin-left: 10px;">
+                                <input class="dark-mode-switch-icon-stye" id="theme-switch" type="checkbox" checked
+                                    data-toggle="toggle" onclick="darkMode()" />
+
+                            </div>
+                        </div>
+
+                    </nav>
+                </div>
+            </header>
+
+        </section>
+
+        <!-- Header section -->
+
+        <!-- Slider section -->
+
+        <section class="about-main-section py-5">
+            <style>
+                .about-main-section {
+                    background-image: url('https://wp.w3layouts.com/laundries/wp-content/themes/laundries/assets/images/inner-banner.jpg');
+                }
+            </style>
+            <div class=" py-lg-5">
+                <div class="container pt-5 pb-sm-4 pb-2" style="text-align: center;">
+
+
+                    <h4 class="about-text-title font-weight-bold pt-5">About Us</h4>
+
+                    <ul class="image-section-ul ">
+                        <a class="image-a-style" href="intex.html" rel="">Home</a>&nbsp;&nbsp;»&nbsp;&nbsp;About page
+                    </ul>
+
+                </div>
+            </div>
+        </section>
+        <!-- Slider section -->
+
+
+        <!-- Experiance Section -->
+
+        <section class=" exp-main">
+            <div class="container  ">
+                <div class="row justify-content-between align-items-center ">
+                    <div class="col-lg-6 about-2-secs-right mb-lg-0 mb-5">
+                        <div class="service-img-div move position-relative">
+                            <div class="service-img-div-1">
+                                <img src="https://wp.w3layouts.com/laundries/wp-content/themes/laundries/assets/images/about1.jpg"
+                                    alt="" width="364" height="459" />
+                            </div>
+                            <div class="service-img-div-2">
+                                <img src="https://wp.w3layouts.com/laundries/wp-content/themes/laundries/assets/images/about2.jpg"
+                                    alt="" width="364" height="459" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 ps-lg-5 mt-4">
+                        <h5 class="sub-title">
+                            <span style="
+                          text-decoration-line: underline;
+                          text-decoration-thickness: 2.2px;
+                          text-underline-offset: 0.4em;
+                        ">
+                                More
+                            </span>
+                            than 25 Years of Experience
+                        </h5>
+                        <h3 class="title-style-exp">We are passionate about Laundry</h3>
+                        <p class="mt-4" style=" color: #707070; line-height: 30px">
+
+                            At vero eos et accusamus et iusto odio dignissimos ducimus qui
+                            blanditiis praesentium voluptatum deleniti similique sunt in
+                            culpa
+                            <br /> qui officia
+                        </p>
+                        <ul class="mt-4 list-style">
+                            <li style=" color: #54b963; line-height: 30px">
+                                <i class="fas  fa fa-check" aria-hidden="true"></i>
+                                <span class="exp-dark-p">
+                                    100% Customer Satisfaction
+                                </span>
+                            </li>
+                            <li style=" color: #54b963; line-height: 50px">
+                                <i class="fas  fa fa-check" aria-hidden="true"></i>
+                                <span class="exp-dark-p">
+                                    Free Collection &amp; Delivery
+                                </span>
+                            </li>
+                            <li style="color: #54b963">
+                                <i class="fas  fa fa-check" aria-hidden="true"></i>
+                                <span class="exp-dark-p">
+                                    Affordable Prices
+                                </span>
+                            </li>
+                        </ul>
+                        <a href="#" class="btn btn-style mt-4" style="
+                        display: flex;
+                        justify-content: flex-start;
+                        width: 190px;
+                      ">
+                            Discover More
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experiance Section -->
+
+
+        <!-- count section -->
+        <div class=" pb-5">
+            <div class="container pb-lg-5 pb-md-4 pb-2">
+
+                <div class="row text-center justify-content-center">
+
+                    <div class="col-md-3 col-6 mt-md-0 mt-2">
+                        <div class="counter-div">
+                            <div class=" count-title" data-to="6370" data-speed="1500">6,370</div>
+                            <p class="count-text">Clothes Washed</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-6 mt-md-0 mt-2">
+                        <div class="counter-div active">
+                            <div class="count-title">9,716</div>
+                            <p class="count-text">Happy Customers</p>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-3 col-6 mt-md-0 mt-2">
+                        <div class="counter-div">
+                            <div class=" count-title">4,600</div>
+                            <p class="count-text">Dry Cleaned</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-6 mt-md-0 mt-2">
+                        <div class="counter-div border-right-0">
+                            <div class=" count-title">967</div>
+                            <p class="count-text">Steam &amp; Ironed</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <!-- count section -->
+
+        <!-- Booking section -->
+
+        <div class=" py-5">
+            <div class="row justify-content-between align-items-center mt-5" style=" width: 100%">
+                <div class="col-lg-6" style="padding: 0px;">
+                    <img alt=""
+                        src="https://wp.w3layouts.com/laundries/wp-content/themes/laundries/assets/images/about4.jpg"
+                        class="img-fluid" width="100%" />
+                </div>
+                <div class="col-lg-6 px-5">
+                    <div class="col-lg-12 mt-5">
+                        <h5 class="booking-sub-title">
+                            <span style="
+              text-decoration-line: underline;
+              text-decoration-thickness: 2.2px;
+              text-underline-offset: 0.4em;
+           ">
+                                Get 30%
+                            </span>
+                            Discount
+                        </h5>
+                        <h3 class="booking-title-style">Book Our Laundry Services</h3>
+                        <p class="booking-p mt-3">
+                            Lorem ipsum viverra feugiat. Pellen tesque libero ut justo, ultrices
+                            inligula. Semper at tempufddfel. Lorem ipsum dolor sit amet
+                            consectetures adipisicing elit.
+                        </p>
+                    </div>
+                    <div class="row mt-5 pt-xl-4">
+                        <div class="col-sm-6  mt-4">
+                            <i style="font-size: 60px; color: #54B963;" class="fas  fa fa-square"
+                                aria-hidden="true"></i>
+
+                            </i>
+                            <div class="ab-detail">
+                                <h4 class="mb-2 mt-4">
+                                    <a href="#" class="booking-bootom-card-text">
+                                        Clean Result
+                                    </a>
+                                </h4>
+                                <p class="booking-bootom-card-p mt-4">
+                                    Sed ut perspiciatis unde omnis iste natus error sit.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 mt-4">
+                            <i style="font-size: 60px; color: #54B963;" class="fas fa fa-truck" aria-hidden="true"></i>
+                            </i>
+                            <div class="ab-detail">
+                                <h4 class=" mb-2 mt-4">
+                                    <a href="#" class="booking-bootom-card-text">
+                                        Fast Delivery
+                                    </a>
+                                </h4>
+                                <p class="booking-bootom-card-p mt-4">
+                                    Sed ut perspiciatis unde omnis iste natus error sit.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Booking section -->
+
+        <!-- cards section -->
+        <section class=" py-5">
+            <div class="container py-lg-5 py-md-4 py-2">
+
+                <div class="title-main text-center mx-auto mb-md-5 mb-4" style="max-width:500px;">
+                    <h5 class="sub-title"> <span style="
+                        text-decoration-line: underline;
+                        text-decoration-thickness: 2.2px;
+                        text-underline-offset: 0.4em;
+                      "> Meet</span> Our Team</h5>
+                    <h3 class="title-style">Professional Staff</h3>
+                </div>
+
+                <div class="row justify-content-center">
+
+                    <div class="col-md-4 col-sm-6 mt-2">
+                        <div class="position-relative">
+                            <img src="https://wp.w3layouts.com/laundries/wp-content/themes/laundries/assets/images/team1.jpg"
+                                class="img-fluid" alt="image">
+                            <div class="text-position">
+                                <h4><a class="about-card-text-style" href="#">Aida Bugg</a></h4>
+                                <p>Subtitle</p>
+                                <div class="about-card-icons">
+                                    <ul class="about-card-list-style">
+
+                                        <li><a href="#"><i class="fab fa fa-facebook"></i></a></li>
+
+
+                                        <li><a href="#"><i class="fab fa fa-twitter"></i></a>
+                                        </li>
+
+
+                                        <li><a href="#"><i class="fab fa fa-linkedin"></i></a></li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 mt-2">
+                        <div class="position-relative">
+                            <img src="https://wp.w3layouts.com/laundries/wp-content/themes/laundries/assets/images/team2.jpg"
+                                class="img-fluid" alt="image">
+                            <div class="text-position">
+                                <h4><a class="about-card-text-style" href="#">Jimic Nasium</a></h4>
+                                <p>Subtitle</p>
+                                <div class="about-card-icons">
+                                    <ul class="about-card-list-style">
+
+                                        <li><a href="#"><i class="fab fa fa-facebook"></i></a></li>
+
+
+                                        <li><a href="#"><i class="fab fa fa-twitter"></i></a>
+                                        </li>
+
+
+                                        <li><a href="#"><i class="fab fa fa-linkedin"></i></a></li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6 mt-2">
+                        <div class="position-relative">
+                            <img src="https://wp.w3layouts.com/laundries/wp-content/themes/laundries/assets/images/team3.jpg"
+                                class="img-fluid" alt="image">
+                            <div class="text-position">
+                                <h4><a class="about-card-text-style" href="#">Henry Itondo</a></h4>
+                                <p>Subtitle</p>
+                                <div class="about-card-icons">
+                                    <ul class="about-card-list-style">
+
+                                        <li><a href="#"><i class="fab fa fa-facebook"></i></a></li>
+
+
+                                        <li><a href="#"><i class="fab fa fa-twitter"></i></a>
+                                        </li>
+
+
+                                        <li><a href="#"><i class="fab fa fa-linkedin"></i></a></li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- cards section -->
+
+
+        <!-- slider -->
+
+        <section class="slider-main pb-5">
+            <div class="container py-lg-5 py-md-4 pt-2 ">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 ">
+                        <div class="title-main mb-4">
+                            <h5 class="slider-sub-title"><span style="
+                                text-decoration-line: underline;
+                                text-decoration-thickness: 2.2px;
+                                text-underline-offset: 0.4em;
+                              ">Tesim</span>onials</h5>
+                            <h3 class="slider-title-style">What our Customers think about us</h3>
+                        </div>
+
+                        <div style="cursor: pointer; display: block;" id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                                <button style="background-color: #54B963;" type="button"
+                                    data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active "
+                                    aria-current="true" aria-label="Slide 1"></button>
+                                <button style="background-color: #54B963;" type="button"
+                                    data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                                    aria-label="Slide 2"></button>
+                                <button style="background-color: #54B963;" type="button"
+                                    data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                                    aria-label="Slide 3"></button>
+                                <button style="background-color: #54B963;" type="button"
+                                    data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                                    aria-label="Slide 4"></button>
+                            </div>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active mb-5">
+                                    <p class="slider-p">"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi
+                                        deserunt asperiores
+                                        natus
+                                        commodi iure quae perspiciatis a porro doloribus voluptate ab perferendis amet
+                                        facere
+                                        delectus autem saepe ducimus, nisi quasi!"</p>
+                                    <div class="d-flex flex-direction-row align-items-center">
+                                        <img class="rounded-circle"
+                                            src="https://wp.w3layouts.com/laundries/wp-content/themes/laundries/assets/images/testi1.jpg"
+                                            width="70px" height="70px" />
+                                        <div class="mx-3 mt-4">
+                                            <h6 class="slider-h6" style="font-size: 20px; font-weight: bold;">John
+                                                wilson</h6>
+                                            <p class="mt-2 slider-p-2"> Subtitle goes here</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item mb-5">
+                                    <p class="slider-p">"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi
+                                        deserunt asperiores
+                                        natus
+                                        commodi iure quae perspiciatis a porro doloribus voluptate ab perferendis amet
+                                        facere
+                                        delectus autem saepe ducimus, nisi quasi!"</p>
+                                    <div class="d-flex flex-direction-row align-items-center">
+                                        <img class="rounded-circle"
+                                            src="https://wp.w3layouts.com/laundries/wp-content/themes/laundries/assets/images/testi2.jpg"
+                                            width="70px" height="70px" />
+                                        <div class="mx-3 mt-4">
+                                            <h6 class="slider-h6" style="font-size: 20px; font-weight: bold;">Julia
+                                                Sakaura</h6>
+                                            <p class="mt-2 slider-p-2"> Subtitle goes here</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item mb-5">
+                                    <p class="slider-p">"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi
+                                        deserunt asperiores
+                                        natus
+                                        commodi iure quae perspiciatis a porro doloribus voluptate ab perferendis amet
+                                        facere
+                                        delectus autem saepe ducimus, nisi quasi!"</p>
+                                    <div class="d-flex flex-direction-row align-items-center">
+                                        <img class="rounded-circle"
+                                            src="https://wp.w3layouts.com/laundries/wp-content/themes/laundries/assets/images/testi3.jpg"
+                                            width="70px" height="70px" />
+                                        <div class="mx-3 mt-4">
+                                            <h6 class="slider-h6" style="font-size: 20px; font-weight: bold;">Roy Mmdson
+                                            </h6>
+                                            <p class="mt-2 slider-p-2"> Subtitle goes here</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item mb-5">
+                                    <p class="slider-p">"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi
+                                        deserunt asperiores
+                                        natus
+                                        commodi iure quae perspiciatis a porro doloribus voluptate ab perferendis amet
+                                        facere
+                                        delectus autem saepe ducimus, nisi quasi!"</p>
+                                    <div class="d-flex flex-direction-row align-items-center">
+                                        <img class="rounded-circle"
+                                            src="https://wp.w3layouts.com/laundries/wp-content/themes/laundries/assets/images/testi2.jpg"
+                                            width="70px" height="70px" />
+                                        <div class="mx-3 mt-4">
+                                            <h6 class="slider-h6" style="font-size: 20px; font-weight: bold;"> Mike
+                                                Tyson</h6>
+                                            <p class="mt-2 slider-p-2"> Subtitle goes here</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <button class="carousel-control-prev" type="button"
+                                data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button"
+                                data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button> -->
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 position-relative ps-lg-5 mt-lg-0 mt-5">
+                        <img src="https://wp.w3layouts.com/laundries/wp-content/themes/laundries/assets/images/testimonials.jpg"
+                            alt="" class="radius-image img-fluid">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Footer section -->
+
+
+        <section style=" background-color: #0e0e0e">
+            <div class="container pt-md-5 pt-4 ">
+                <!-- <div> -->
+                <div class=" d-flex align-items-center justify-content-between mb-5 footer-contact-div">
+                    <h6 class="footer-sub-title">Contact Us</h6>
+
+                    <div class=" mt-5"
+                        style="width: 200px; display: flex; flex-direction: row; justify-content: space-between;">
+                        <span
+                            class="footer-icon-span-style d-flex align-items-center rounded-circle justify-content-center"
+                            style="width: 40px; height: 40px; background: #fff;">
+                            <i class="rounded-circle fas fa fa-facebook" style="color: #000; font-size: 22px;"
+                                aria-hidden="true"></i>
+                        </span>
+                        <span
+                            class="footer-icon-span-style d-flex align-items-center rounded-circle justify-content-center"
+                            style="width: 40px; height: 40px; background: #fff;">
+                            <i class=" rounded-circle fas fa fa-twitter" style="color: #000; font-size: 22px;"
+                                aria-hidden="true"></i>
+                        </span><span
+                            class="footer-icon-span-style d-flex align-items-center rounded-circle justify-content-center"
+                            style="width: 40px; height: 40px; background: #fff;">
+                            <i class=" rounded-circle fas fa fa-instagram" style="color: #000; font-size: 22px;"
+                                aria-hidden="true"></i>
+                        </span><span
+                            class="footer-icon-span-style d-flex align-items-center rounded-circle justify-content-center"
+                            style="width: 40px; height: 40px; background: #fff;">
+                            <i class=" rounded-circle fas fa fa-linkedin-square" style="color: #000; font-size: 22px;"
+                                aria-hidden="true"></i>
+                        </span>
+                    </div>
+                </div>
+
+                <div class=" row " style="margin-top: 120px;">
+                    <div class="col-lg-3 col-sm-6 ">
+                        <div class="address-div">
+                            <h5>
+                                10001 Alleghany st, 5th Avenue, 235 Terry, <br /> London.
+                            </h5>
+
+                            <h5 class="mt-5">
+                                Everyday: <span> 7 AM - 8 PM</span>
+                            </h5>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-sm-6 ">
+                        <div class="address-div">
+                            <h5 style="font-weight: bold">Phone</h5>
+                            <h5 class="phone-number-text mt-2">+1(21) 112 7368</h5>
+                        </div>
+
+                        <div class="address-div mt-4">
+                            <h5 style=" color: #FFFFFF">E-mail</h5>
+                            <h5 class="email-text mt-1"> laundries@mail.com</h5>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 col-sm-5 ">
+                        <div class="address-div ">
+                            <h5 style=" font-weight: bold">Support Links</h5>
+                        </div>
+                    </div>
+
+                    <div class="address-div col-lg-4 col-md-6 col-sm-7">
+                        <h5 style=" font-weight: bold">Subscribe Here</h5>
+                        <form action="" class="footer-input-style d-flex mt-3  mb-4">
+                            <input class="footer-input-style footer-input-dark-style" type="email" name="email"
+                                placeholder="Email Address" required="" />
+                            <button class="footer-button-style">
+                                <span>
+                                    <i class="fas fa fa-paper-plane"></i>
+                                </span>
+                            </button>
+                        </form>
+                        <p style="color: #707070;">
+                            Subscribe to our mailing list and get updates to your email
+                            inbox.
+                        </p>
+                    </div>
+                    <div class="pt-3">
+                        <p style=" color: #FFFFFF ; text-align: center">
+                            © 2023 Laundries. All Rights Reserved | WordPress Theme by
+                            <a href="#" style=" color: #54B963 ; text-decoration: none ; font-weight: bold ; ">
+                                W3Layouts.
+                            </a>
+                        </p>
+                    </div>
+                </div>
+                <!-- </div> -->
+            </div>
+        </section>
+
+        <!-- Footer section -->
+        <button class="top-move-btn" title="Go to top" style="display: block; ">
+            <a href="#" style="text-decoration: none ; color: #FFFFFF;">
+                <span class="fas fa fa-arrow-up" aria-hidden="true"></span>
+            </a>
+        </button>
+
+    </div>
+
+
+</body>
+
+</html>

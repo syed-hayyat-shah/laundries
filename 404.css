@@ -1,0 +1,110 @@
+main {
+    display: block;
+}
+
+
+.w3l-error-grid {
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -ms-background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 0;
+}
+
+.error-block {
+    max-width: 550px;
+}
+
+.w3l-error-grid h1 {
+    font-size: 180px;
+    color: #fff;
+}
+
+
+.w3l-error-grid h1 i {
+    font-size: 140px;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .w3l-error-grid .error-h3ading i {
+        font-size: 130px !important;
+    }
+}
+
+@media only screen and (max-width: 450x) {
+    .w3l-error-grid .error-h3ading i {
+        font-size: 120px !important;
+    }
+}
+
+@media only screen and (max-width: 380px) {
+    .w3l-error-grid .error-h3ading i {
+        font-size: 110px !important;
+    }
+}
+
+@media only screen and (max-width: 260px) {
+    .w3l-error-grid .error-h3ading i {
+        font-size: 80px !important;
+    }
+}
+.error-block p {
+    color: #eee;
+}
+
+.w3l-error-grid .form-inline.search-form {
+    position: relative;
+    max-width: 500px;
+}
+
+
+.w3l-error-grid .form-control {
+    width: 100%;
+    background: #19211e;
+    padding: 12px 140px 12px 25px;
+    font-size: 18px;
+    line-height: 28px;
+    height: 55px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 30px;
+    display: block;
+}
+
+.w3l-error-grid:before {
+    content: "";
+    background: linear-gradient(to right, rgb(0 0 0 / 42%) 0%, transparent 100%);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+}
+
+.w3l-error-grid button.btn.search {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 55px;
+}
+
+
+.w3l-error-grid .back-button {
+    font-weight: 600;
+    display: inline-block;
+    font-size: 18px;
+    color: #fff;
+    letter-spacing: 0;
+}
+
+.w3l-error-grid .back-button span.fa {
+    font-size: 14px;
+    vertical-align: 1px;
+}

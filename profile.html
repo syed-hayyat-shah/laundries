@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link href="//fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700;800;900&amp;display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="profile.css">
+  <link rel="stylesheet" href="codemirror-5.63.1/lib/codemirror.css">
+  <script src="codemirror-5.63.1/lib/codemirror.js"></script>
+</head>
+
+<body>
+  <!-- Profile Page (index.html) -->
+  <!-- Profile Page (index.html) -->
+  <a href="intex.html">
+    <button type="button" class="btn " style="background-color: black; color: #fff;">Go Home</button>
+  </a>
+  <section class="bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 mb-4 mb-sm-5">
+          <div class="card card-style1 border-0">
+            <div class="card-body p-1-9 p-sm-2-3 p-md-6 p-lg-7">
+              <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                  <img id="profileImage" src="#" alt="Profile Image">
+                </div>
+                <div class="col-lg-6 px-xl-10">
+                  <div class="bg-secondary d-lg-inline-block py-1-9 px-1-9 px-sm-6 mb-1-9 rounded">
+                    <h3 class="h2 text-white mb-0" id="nameValue">Loading...</h3>
+
+                  </div>
+                  <ul class="list-unstyled mb-1-9">
+
+                    <li class="mb-2 mb-xl-3 display-28">
+                      <span class="display-26 text-secondary me-2 font-weight-600">Email:</span>
+                      <span id="emailValue">Loading...</span>
+                    </li>
+                    <li class="mb-2 mb-xl-3 display-28">
+                      <span class="display-26 text-secondary me-2 font-weight-600">Password:</span>
+                      <span id="passwordValue">Loading...</span>
+                    </li>
+                    <li class="display-28">
+                      <span class="display-26 text-secondary me-2 font-weight-600">Gender:</span>
+                      <span id="genderValue">Loading...</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    async function populateProfile() {
+      const loggedInEmail = sessionStorage.getItem("currentUserEmail");
+
+      if (loggedInEmail) {
+        const userJSON = localStorage.getItem(loggedInEmail);
+
+        if (userJSON) {
+          const userData = JSON.parse(userJSON);
+
+          // Populate the profile page with user data
+          document.getElementById('nameValue').textContent = userData.name || 'Not Provided';
+          document.getElementById('emailValue').textContent = userData.email || 'Not Provided';
+          document.getElementById('passwordValue').textContent = userData.password || 'Not Provided';
+          document.getElementById('genderValue').textContent = userData.gender || 'Not Provided';
+
+          // Handle profile image, if applicable
+          const profileImageElement = document.getElementById('profileImage');
+          if (userData.profileImage && userData.profileImage !== 'undefined') {
+            try {
+              const response = await fetch(userData.profileImage);
+              if (response.ok) {
+                const blob = await response.blob();
+                const imageUrl = URL.createObjectURL(blob);
+                profileImageElement.src = imageUrl;
+                profileImageElement.alt = 'Profile Image';
+              } else {
+                // Handle image loading error
+                console.error('Failed to load profile image');
+              }
+            } catch (error) {
+              console.error('Error loading profile image:', error);
+            }
+          } else {
+            // Set a default image if no profile image is provided
+            profileImageElement.src = 'https://bootdey.com/img/Content/avatar/avatar7.png';
+            profileImageElement.alt = 'Profile Image';
+          }
+        }
+      } else {
+        alert("No user is currently logged in. Please log in.");
+        // Redirect to the login page or another appropriate page
+        window.location.href = "login.html";
+      }
+    }
+
+    // Call the function to populate the profile page
+    populateProfile();
+  </script>
+
+
+  <!-- Your profile page HTML -->
+
+</body>
+
+</html>

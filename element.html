@@ -1,0 +1,1337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link href="//fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700;800;900&amp;display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="about.css"> -->
+    <link rel="stylesheet" href="element.css">
+    <!-- <link href="about.html" /> -->
+    <title>Document</title>
+</head>
+<script src="javascript.js">
+
+</script>
+<style>
+    body {
+        background-color: #FFFF;
+    }
+
+    .dark-mode {
+        background-color: #19211E;
+    }
+
+    #theme-switch {
+        cursor: pointer;
+        position: relative;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        width: 25px;
+        background: url('https://awik.io/demo/sun.svg');
+        height: 25px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+
+
+    }
+
+    #theme-switch:checked {
+        background: url('https://awik.io/demo/moon.svg');
+
+    }
+</style>
+
+<body>
+
+    <div>
+        <!-- Header section -->
+
+        <section>
+            <header id="site-header" class="main-header fixed-top">
+                <div class="container ">
+                    <nav class="navbar navbar-expand-lg navbar-light">
+
+                        <h1 style="display: flex; flex-direction: row;">
+                            <a class="header-dark-mode-title-style" href="intex.html"
+                                style="color: #060606; text-decoration: none;">
+                                <span style="color: #54B963;">L</span>aundries
+
+                            </a>
+
+                        </h1>
+
+                        <div class="mobile-switch-icon">
+                            <input class="dark-mode-switch-icon-stye" id="theme-switch" type="checkbox" checked
+                                data-toggle="toggle" onclick="darkMode()" />
+
+                        </div>
+                        <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon fa icon-expand"></span>
+                        </button>
+
+                        <div class="collapse  navbar-collapse " id="navbarScroll" style="justify-content: end;">
+
+                            <ul class="navbar-nav  my-2 my-lg-0 navbar-nav-scroll ">
+                                <li>
+                                    <a href="intex.html" class=" nav-link nav-items-color-style  active"
+                                        style="color: #54B963;">Home</a>
+                                </li>
+                                <li><a href="about.html" class="nav-link  nav-items-color-style ">About</a>
+                                </li>
+                                <li><a href="service.html" class="nav-link  nav-items-color-style ">Services</a></li>
+                                <!-- <li>
+                                    <a href="#" class="nav-link  nav-items-color-style  
+                  ">Pages</a>
+
+                                </li> -->
+                                <li id="menu-item-24"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children dropdown nav-item nav-item-24">
+                                    <a href="#" class="nav-link nav-items-color-style active dropdown-toggle"
+                                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
+                                    <ul class="dropdown-menu depth_0">
+                                        <li id="menu-item-25"
+                                            class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-25">
+                                            <a href="blog.html" class="dropdown-item ">Blog page</a>
+                                        </li>
+                                        <li id="menu-item-28"
+                                            class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-16 current_page_item nav-item nav-item-28">
+                                            <a href="element.html" class="dropdown-item">Elements
+                                                page</a>
+                                        </li>
+                                        <li id="menu-item-26"
+                                            class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-26">
+                                            <a href="landing.html" class="dropdown-item ">Landing
+                                                page</a>
+                                        </li>
+                                        <li id="menu-item-29"
+                                            class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-29">
+                                            <a href="404.html" class="dropdown-item ">404 page</a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li><a href="contact.html" class="nav-link  nav-items-color-style ">Contact</a></li>
+                            </ul>
+                            <!-- <input id="theme-switch" type="checkbox"> -->
+                            <ul class="navbar-nav">
+
+                                <form class="d-flex search-header ms-lg-2 ml-5">
+                                    <input class="form-control input-style dark-mode-header-input"
+                                        style="border: 1px solid #eee;" type="search" placeholder="Enter Keyword..."
+                                        aria-label="Search" required="">
+                                    <button class="btn btn-style" type="submit"><i
+                                            class="fas  fa fa-search"></i></button>
+                                </form>
+
+                            </ul>
+                            <div class="web-switch-icon mt-2" style="margin-left: 10px;">
+                                <input class="dark-mode-switch-icon-stye" id="theme-switch" type="checkbox" checked
+                                    data-toggle="toggle" onclick="darkMode()" />
+
+                            </div>
+                        </div>
+
+                    </nav>
+                </div>
+            </header>
+
+        </section>
+
+        <!-- Header section -->
+
+        <!-- Slider section -->
+
+        <section class="about-main-section py-5">
+            <style>
+                .about-main-section {
+                    background-image: url('https://wp.w3layouts.com/laundries/wp-content/themes/laundries/assets/images/inner-banner.jpg');
+                }
+            </style>
+            <div class=" py-lg-5">
+                <div class="container pt-5 pb-sm-4 pb-2" style="text-align: center;">
+
+
+                    <h4 class="about-text-title font-weight-bold pt-5">Element</h4>
+
+                    <ul class="image-section-ul ">
+                        <a class="image-a-style" href="intex.html" rel="">Home</a>&nbsp;&nbsp;»&nbsp;&nbsp;Element page
+                    </ul>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Slider section -->
+        <div class="typo-w3 margin-btm-space py-5">
+            <div class="container py-lg-5 py-md-4 py-2">
+                <div class="typo-wthree">
+                    <!-- Offcanvas -->
+                    <h4 class="pb-2">Offcanvas</h4>
+                    <div class="bd-example bd-example-offcanvas p-0 overflow-hidden">
+                        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas"
+                            aria-labelledby="offcanvasLabel">
+                            <div class="offcanvas-header">
+                                <h5 class="offcanvas-title" id="offcanvasLabel">Offcanvas</h5>
+                                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body">
+                                Content for the offcanvas goes here. You can place just about any Bootstrap component or
+                                custom elements here.
+                            </div>
+                        </div>
+                    </div>
+                    <figure class="highlight">
+                        <pre class="chroma">
+                            <code class="language-html" data-lang="html"><span class="paragraph">&lt;</span><span class="div">div</span>
+                                 <span class="class">class</span><span >=</span>
+                                 <span class="class-name">"offcanvas offcanvas-start"</span> 
+                                 <span class="class">tabindex</span><span >=</span><span class="class-name">"-1"</span> <span class="class">id</span><span >=</span><span class="class-name">"offcanvas"</span> <span class="class">aria-labelledby</span><span >=</span><span class="class-name">"offcanvasLabel"</span><span class="paragraph">&gt;</span>
+            <span class="paragraph">&lt;</span><span class="div">div</span> <span class="class">class</span>
+            <span >=</span><span class="class-name">"offcanvas-header"</span>
+            <span class="paragraph">&gt;</span>
+                <span class="paragraph">&lt;</span><span class="div">h5</span>
+                 <span class="class">class</span><span >=</span>
+                 <span class="class-name">"offcanvas-title"</span> <span class="class">id</span><span >=</span><span class="class-name">"offcanvasLabel"</span><span class="paragraph">&gt;</span>Offcanvas<span class="paragraph">&lt;/</span><span class="div">h5</span><span class="paragraph">&gt;</span>
+                <span class="paragraph">&lt;</span><span class="div">button</span>
+                 <span class="class">type</span><span >=</span>
+                 <span class="class-name">"button"</span>
+                  <span class="class">class</span><span >=</span><span class="class-name">"btn-close text-reset"</span> <span class="class">data-bs-dismiss</span><span >=</span><span class="class-name">"offcanvas"</span> <span class="class">aria-label</span><span >=</span><span class="class-name">"Close"</span><span class="paragraph">&gt;&lt;/</span><span class="div">button</span><span class="paragraph">&gt;</span>
+            <span class="paragraph">&lt;/</span><span class="div">div</span>
+            <span class="paragraph">&gt;</span>
+            <span class="paragraph">&lt;</span><span class="div">div</span> 
+            <span class="class">class</span><span >=</span>
+            <span class="class-name">"offcanvas-body"</span><span class="paragraph">&gt;</span>
+                Content for the offcanvas goes here. You can place just about any Bootstrap component or custom elements here.
+            <span class="paragraph">&lt;/</span><span class="div">div</span>
+            <span class="paragraph">&gt;</span>
+        <span class="paragraph">&lt;/</span><span class="div">div</span>
+        <span class="paragraph">&gt;</span></code>
+    </pre>
+                    </figure>
+
+                    <!-- Offcanvas -->
+                    <h4 class="pt-5 pb-2">Live demo</h4>
+                    <div class="bd-example">
+                        <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
+                            aria-controls="offcanvasExample">
+                            Link with href
+                        </a>
+                        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                            Button with data-bs-target
+                        </button>
+
+                        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
+                            aria-labelledby="offcanvasExampleLabel">
+                            <div class="offcanvas-header">
+                                <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+                                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body">
+                                <div>
+                                    Some text as placeholder. In real life you can have the elements you have chosen.
+                                    Like,
+                                    text, images, lists, etc.
+                                </div>
+                                <div class="dropdown mt-3">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button"
+                                        id="dropdownMenuButton" data-bs-toggle="dropdown">
+                                        Dropdown button
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <li><a class="dropdown-item" href="#">Action</a></li>
+                                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="highlight">
+                        <pre class="chroma"><code class="language-html" data-lang="html"><span class="paragraph">&lt;</span><span class="div">a</span> <span class="class">class</span><span >=</span><span class="class-name">"btn btn-primary"</span> <span class="class">data-bs-toggle</span><span >=</span><span class="class-name">"offcanvas"</span> <span class="class">href</span><span >=</span><span class="class-name">"#offcanvasExample"</span> <span class="class">role</span><span >=</span><span class="class-name">"button"</span> <span class="class">aria-controls</span><span >=</span><span class="class-name">"offcanvasExample"</span><span class="paragraph">&gt;</span>
+          Link with href
+        <span class="paragraph">&lt;/</span><span class="div">a</span><span class="paragraph">&gt;</span>
+        <span class="paragraph">&lt;</span><span class="div">button</span> <span class="class">class</span><span >=</span><span class="class-name">"btn btn-primary"</span> <span class="class">type</span><span >=</span><span class="class-name">"button"</span> <span class="class">data-bs-toggle</span><span >=</span><span class="class-name">"offcanvas"</span> <span class="class">data-bs-target</span><span >=</span><span class="class-name">"#offcanvasExample"</span> <span class="class">aria-controls</span><span >=</span><span class="class-name">"offcanvasExample"</span><span class="paragraph">&gt;</span>
+          Button with data-bs-target
+        <span class="paragraph">&lt;/</span><span class="div">button</span><span class="paragraph">&gt;</span>
+        
+        <span class="paragraph">&lt;</span><span class="div">div</span> <span class="class">class</span><span >=</span><span class="class-name">"offcanvas offcanvas-start"</span> <span class="class">tabindex</span><span >=</span><span class="class-name">"-1"</span> <span class="class">id</span><span >=</span><span class="class-name">"offcanvasExample"</span> <span class="class">aria-labelledby</span><span >=</span><span class="class-name">"offcanvasExampleLabel"</span><span class="paragraph">&gt;</span>
+          <span class="paragraph">&lt;</span><span class="div">div</span> <span class="class">class</span><span >=</span><span class="class-name">"offcanvas-header"</span><span class="paragraph">&gt;</span>
+            <span class="paragraph">&lt;</span><span class="div">h5</span> <span class="class">class</span><span >=</span><span class="class-name">"offcanvas-title"</span> <span class="class">id</span><span >=</span><span class="class-name">"offcanvasExampleLabel"</span><span class="paragraph">&gt;</span>Offcanvas<span class="paragraph">&lt;/</span><span class="div">h5</span><span class="paragraph">&gt;</span>
+            <span class="paragraph">&lt;</span><span class="div">button</span> <span class="class">type</span><span >=</span><span class="class-name">"button"</span> <span class="class">class</span><span >=</span><span class="class-name">"btn-close text-reset"</span> <span class="class">data-bs-dismiss</span><span >=</span><span class="class-name">"offcanvas"</span> <span class="class">aria-label</span><span >=</span><span class="class-name">"Close"</span><span class="paragraph">&gt;&lt;/</span><span class="div">button</span><span class="paragraph">&gt;</span>
+          <span class="paragraph">&lt;/</span><span class="div">div</span><span class="paragraph">&gt;</span>
+          <span class="paragraph">&lt;</span><span class="div">div</span> <span class="class">class</span><span >=</span><span class="class-name">"offcanvas-body"</span><span class="paragraph">&gt;</span>
+            <span class="paragraph">&lt;</span><span class="div">div</span><span class="paragraph">&gt;</span>
+              Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
+            <span class="paragraph">&lt;/</span><span class="div">div</span><span class="paragraph">&gt;</span>
+            <span class="paragraph">&lt;</span><span class="div">div</span> <span class="class">class</span><span >=</span><span class="class-name">"dropdown mt-3"</span><span class="paragraph">&gt;</span>
+              <span class="paragraph">&lt;</span><span class="div">button</span> <span class="class">class</span><span >=</span><span class="class-name">"btn btn-secondary dropdown-toggle"</span> <span class="class">type</span><span >=</span><span class="class-name">"button"</span> <span class="class">id</span><span >=</span><span class="class-name">"dropdownMenuButton"</span> <span class="class">data-bs-toggle</span><span >=</span><span class="class-name">"dropdown"</span><span class="paragraph">&gt;</span>
+                Dropdown button
+              <span class="paragraph">&lt;/</span><span class="div">button</span><span class="paragraph">&gt;</span>
+              <span class="paragraph">&lt;</span><span class="div">ul</span> <span class="class">class</span><span >=</span><span class="class-name">"dropdown-menu"</span> <span class="class">aria-labelledby</span><span >=</span><span class="class-name">"dropdownMenuButton"</span><span class="paragraph">&gt;</span>
+                <span class="paragraph">&lt;</span><span class="div">li</span><span class="paragraph">&gt;&lt;</span><span class="div">a</span> <span class="class">class</span><span >=</span><span class="class-name">"dropdown-item"</span> <span class="class">href</span><span >=</span><span class="class-name">"#"</span><span class="paragraph">&gt;</span>Action<span class="paragraph">&lt;/</span><span class="div">a</span><span class="paragraph">&gt;&lt;/</span><span class="div">li</span><span class="paragraph">&gt;</span>
+                <span class="paragraph">&lt;</span><span class="div">li</span><span class="paragraph">&gt;&lt;</span><span class="div">a</span> <span class="class">class</span><span >=</span><span class="class-name">"dropdown-item"</span> <span class="class">href</span><span >=</span><span class="class-name">"#"</span><span class="paragraph">&gt;</span>Another action<span class="paragraph">&lt;/</span><span class="div">a</span><span class="paragraph">&gt;&lt;/</span><span class="div">li</span><span class="paragraph">&gt;</span>
+                <span class="paragraph">&lt;</span><span class="div">li</span><span class="paragraph">&gt;&lt;</span><span class="div">a</span> <span class="class">class</span><span >=</span><span class="class-name">"dropdown-item"</span> <span class="class">href</span><span >=</span><span class="class-name">"#"</span><span class="paragraph">&gt;</span>Something else here<span class="paragraph">&lt;/</span><span class="div">a</span><span class="paragraph">&gt;&lt;/</span><span class="div">li</span><span class="paragraph">&gt;</span>
+              <span class="paragraph">&lt;/</span><span class="div">ul</span><span class="paragraph">&gt;</span>
+            <span class="paragraph">&lt;/</span><span class="div">div</span><span class="paragraph">&gt;</span>
+          <span class="paragraph">&lt;/</span><span class="div">div</span><span class="paragraph">&gt;</span>
+        <span class="paragraph">&lt;/</span><span class="div">div</span><span class="paragraph">&gt;</span></code></pre>
+                    </div>
+                    <div class="bd-example">
+                        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">Toggle top offcanvas</button>
+
+                        <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop"
+                            aria-labelledby="offcanvasTopLabel">
+                            <div class="offcanvas-header">
+                                <h5 id="offcanvasTopLabel">Offcanvas top</h5>
+                                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body">
+                                ...
+                            </div>
+                        </div>
+                    </div>
+                    <div class="highlight">
+                        <pre class="chroma"><code class="language-html" data-lang="html"><span class="paragraph">&lt;</span><span class="div">button</span> <span class="class">class</span><span >=</span><span class="class-name">"btn btn-primary"</span> <span class="class">type</span><span >=</span><span class="class-name">"button"</span> <span class="class">data-bs-toggle</span><span >=</span><span class="class-name">"offcanvas"</span> <span class="class">data-bs-target</span><span >=</span><span class="class-name">"#offcanvasTop"</span> <span class="class">aria-controls</span><span >=</span><span class="class-name">"offcanvasTop"</span><span class="paragraph">&gt;</span>Toggle top offcanvas<span class="paragraph">&lt;/</span><span class="div">button</span><span class="paragraph">&gt;</span>
+                
+                <span class="paragraph">&lt;</span><span class="div">div</span> <span class="class">class</span><span >=</span><span class="class-name">"offcanvas offcanvas-top"</span> <span class="class">tabindex</span><span >=</span><span class="class-name">"-1"</span> <span class="class">id</span><span >=</span><span class="class-name">"offcanvasTop"</span> <span class="class">aria-labelledby</span><span >=</span><span class="class-name">"offcanvasTopLabel"</span><span class="paragraph">&gt;</span>
+                    <span class="paragraph">&lt;</span><span class="div">div</span> <span class="class">class</span><span >=</span><span class="class-name">"offcanvas-header"</span><span class="paragraph">&gt;</span>
+                    <span class="paragraph">&lt;</span><span class="div">h5</span> <span class="class">id</span><span >=</span><span class="class-name">"offcanvasTopLabel"</span><span class="paragraph">&gt;</span>Offcanvas top<span class="paragraph">&lt;/</span><span class="div">h5</span><span class="paragraph">&gt;</span>
+                    <span class="paragraph">&lt;</span><span class="div">button</span> <span class="class">type</span><span >=</span><span class="class-name">"button"</span> <span class="class">class</span><span >=</span><span class="class-name">"btn-close text-reset"</span> <span class="class">data-bs-dismiss</span><span >=</span><span class="class-name">"offcanvas"</span> <span class="class">aria-label</span><span >=</span><span class="class-name">"Close"</span><span class="paragraph">&gt;&lt;/</span><span class="div">button</span><span class="paragraph">&gt;</span>
+                    <span class="paragraph">&lt;/</span><span class="div">div</span><span class="paragraph">&gt;</span>
+                    <span class="paragraph">&lt;</span><span class="div">div</span> <span class="class">class</span><span >=</span><span class="class-name">"offcanvas-body"</span><span class="paragraph">&gt;</span>
+                    ...
+                    <span class="paragraph">&lt;/</span><span class="div">div</span><span class="paragraph">&gt;</span>
+                <span class="paragraph">&lt;/</span><span class="div">div</span><span class="paragraph">&gt;</span></code></pre>
+                    </div>
+
+                    <!-- Offcanvas -->
+                    <h4 class="pt-5 pb-3">Accordion</h4>
+                    <div class="bd-example">
+                        <div class="accordion" id="accordionExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        Accordion Item #1
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show"
+                                    aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <strong>This is the first item's accordion body.</strong> It is shown by
+                                        default,
+                                        until the collapse plugin adds the appropriate classes that we use to style each
+                                        element. These classes control the overall appearance, as well as the showing
+                                        and
+                                        hiding via CSS transitions. You can modify any of this with custom CSS or
+                                        overriding
+                                        our default variables. It's also worth noting that just about any HTML can go
+                                        within
+                                        the <code>.accordion-body</code>, though the transition does limit overflow.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Accordion Item #2
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <strong>This is the second item's accordion body.</strong> It is hidden by
+                                        default,
+                                        until the collapse plugin adds the appropriate classes that we use to style each
+                                        element. These classes control the overall appearance, as well as the showing
+                                        and
+                                        hiding via CSS transitions. You can modify any of this with custom CSS or
+                                        overriding
+                                        our default variables. It's also worth noting that just about any HTML can go
+                                        within
+                                        the <code>.accordion-body</code>, though the transition does limit overflow.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseThree" aria-expanded="false"
+                                        aria-controls="collapseThree">
+                                        Accordion Item #3
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse"
+                                    aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <strong>This is the third item's accordion body.</strong> It is hidden by
+                                        default,
+                                        until the collapse plugin adds the appropriate classes that we use to style each
+                                        element. These classes control the overall appearance, as well as the showing
+                                        and
+                                        hiding via CSS transitions. You can modify any of this with custom CSS or
+                                        overriding
+                                        our default variables. It's also worth noting that just about any HTML can go
+                                        within
+                                        the <code>.accordion-body</code>, though the transition does limit overflow.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="highlight">
+                        <pre class="chroma"><code class="language-html" data-lang="html"><span class="paragraph">&lt;</span><span class="div">div</span> <span class="class">class</span><span >=</span><span class="class-name">"accordion"</span> <span class="class">id</span><span >=</span><span class="class-name">"accordionExample"</span><span class="paragraph">&gt;</span>
+            <span class="paragraph">&lt;</span><span class="div">div</span> <span class="class">class</span><span >=</span><span class="class-name">"accordion-item"</span><span class="paragraph">&gt;</span>
+              <span class="paragraph">&lt;</span><span class="div">h2</span> <span class="class">class</span><span >=</span><span class="class-name">"accordion-header"</span> <span class="class">id</span><span >=</span><span class="class-name">"headingOne"</span><span class="paragraph">&gt;</span>
+                <span class="paragraph">&lt;</span><span class="div">button</span> <span class="class">class</span><span >=</span><span class="class-name">"accordion-button"</span> <span class="class">type</span><span >=</span><span class="class-name">"button"</span> <span class="class">data-bs-toggle</span><span >=</span><span class="class-name">"collapse"</span> <span class="class">data-bs-target</span><span >=</span><span class="class-name">"#collapseOne"</span> <span class="class">aria-expanded</span><span >=</span><span class="class-name">"true"</span> <span class="class">aria-controls</span><span >=</span><span class="class-name">"collapseOne"</span><span class="paragraph">&gt;</span>
+                  Accordion Item #1
+                <span class="paragraph">&lt;/</span><span class="div">button</span><span class="paragraph">&gt;</span>
+              <span class="paragraph">&lt;/</span><span class="div">h2</span><span class="paragraph">&gt;</span>
+              <span class="paragraph">&lt;</span><span class="div">div</span> <span class="class">id</span><span >=</span><span class="class-name">"collapseOne"</span> <span class="class">class</span><span >=</span><span class="class-name">"accordion-collapse collapse show"</span> <span class="class">aria-labelledby</span><span >=</span><span class="class-name">"headingOne"</span> <span class="class">data-bs-parent</span><span >=</span><span class="class-name">"#accordionExample"</span><span class="paragraph">&gt;</span>
+                <span class="paragraph">&lt;</span><span class="div">div</span> <span class="class">class</span><span >=</span><span class="class-name">"accordion-body"</span><span class="paragraph">&gt;</span>
+                  <span class="paragraph">&lt;</span><span class="div">strong</span><span class="paragraph">&gt;</span>This is the first item's accordion body.<span class="paragraph">&lt;/</span><span class="div">strong</span><span class="paragraph">&gt;</span> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <span class="paragraph">&lt;</span><span class="div">code</span><span class="paragraph">&gt;</span>.accordion-body<span class="paragraph">&lt;/</span><span class="div">code</span><span class="paragraph">&gt;</span>, though the transition does limit overflow.
+                <span class="paragraph">&lt;/</span><span class="div">div</span><span class="paragraph">&gt;</span>
+              <span class="paragraph">&lt;/</span><span class="div">div</span><span class="paragraph">&gt;</span>
+            <span class="paragraph">&lt;/</span><span class="div">div</span><span class="paragraph">&gt;</span>
+            <span class="paragraph">&lt;</span><span class="div">div</span> <span class="class">class</span><span >=</span><span class="class-name">"accordion-item"</span><span class="paragraph">&gt;</span>
+              <span class="paragraph">&lt;</span><span class="div">h2</span> <span class="class">class</span><span >=</span><span class="class-name">"accordion-header"</span> <span class="class">id</span><span >=</span><span class="class-name">"headingTwo"</span><span class="paragraph">&gt;</span>
+                <span class="paragraph">&lt;</span><span class="div">button</span> <span class="class">class</span><span >=</span><span class="class-name">"accordion-button collapsed"</span> <span class="class">type</span><span >=</span><span class="class-name">"button"</span> <span class="class">data-bs-toggle</span><span >=</span><span class="class-name">"collapse"</span> <span class="class">data-bs-target</span><span >=</span><span class="class-name">"#collapseTwo"</span> <span class="class">aria-expanded</span><span >=</span><span class="class-name">"false"</span> <span class="class">aria-controls</span><span >=</span><span class="class-name">"collapseTwo"</span><span class="paragraph">&gt;</span>
+                  Accordion Item #2
+                <span class="paragraph">&lt;/</span><span class="div">button</span><span class="paragraph">&gt;</span>
+              <span class="paragraph">&lt;/</span><span class="div">h2</span><span class="paragraph">&gt;</span>
+              <span class="paragraph">&lt;</span><span class="div">div</span> <span class="class">id</span><span >=</span><span class="class-name">"collapseTwo"</span> <span class="class">class</span><span >=</span><span class="class-name">"accordion-collapse collapse"</span> <span class="class">aria-labelledby</span><span >=</span><span class="class-name">"headingTwo"</span> <span class="class">data-bs-parent</span><span >=</span><span class="class-name">"#accordionExample"</span><span class="paragraph">&gt;</span>
+                <span class="paragraph">&lt;</span><span class="div">div</span> <span class="class">class</span><span >=</span><span class="class-name">"accordion-body"</span><span class="paragraph">&gt;</span>
+                  <span class="paragraph">&lt;</span><span class="div">strong</span><span class="paragraph">&gt;</span>This is the second item's accordion body.<span class="paragraph">&lt;/</span><span class="div">strong</span><span class="paragraph">&gt;</span> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <span class="paragraph">&lt;</span><span class="div">code</span><span class="paragraph">&gt;</span>.accordion-body<span class="paragraph">&lt;/</span><span class="div">code</span><span class="paragraph">&gt;</span>, though the transition does limit overflow.
+                <span class="paragraph">&lt;/</span><span class="div">div</span><span class="paragraph">&gt;</span>
+              <span class="paragraph">&lt;/</span><span class="div">div</span><span class="paragraph">&gt;</span>
+            <span class="paragraph">&lt;/</span><span class="div">div</span><span class="paragraph">&gt;</span>
+            <span class="paragraph">&lt;</span><span class="div">div</span> <span class="class">class</span><span >=</span><span class="class-name">"accordion-item"</span><span class="paragraph">&gt;</span>
+              <span class="paragraph">&lt;</span><span class="div">h2</span> <span class="class">class</span><span >=</span><span class="class-name">"accordion-header"</span> <span class="class">id</span><span >=</span><span class="class-name">"headingThree"</span><span class="paragraph">&gt;</span>
+                <span class="paragraph">&lt;</span><span class="div">button</span> <span class="class">class</span><span >=</span><span class="class-name">"accordion-button collapsed"</span> <span class="class">type</span><span >=</span><span class="class-name">"button"</span> <span class="class">data-bs-toggle</span><span >=</span><span class="class-name">"collapse"</span> <span class="class">data-bs-target</span><span >=</span><span class="class-name">"#collapseThree"</span> <span class="class">aria-expanded</span><span >=</span><span class="class-name">"false"</span> <span class="class">aria-controls</span><span >=</span><span class="class-name">"collapseThree"</span><span class="paragraph">&gt;</span>
+                  Accordion Item #3
+                <span class="paragraph">&lt;/</span><span class="div">button</span><span class="paragraph">&gt;</span>
+              <span class="paragraph">&lt;/</span><span class="div">h2</span><span class="paragraph">&gt;</span>
+              <span class="paragraph">&lt;</span><span class="div">div</span> <span class="class">id</span><span >=</span><span class="class-name">"collapseThree"</span> <span class="class">class</span><span >=</span><span class="class-name">"accordion-collapse collapse"</span> <span class="class">aria-labelledby</span><span >=</span><span class="class-name">"headingThree"</span> <span class="class">data-bs-parent</span><span >=</span><span class="class-name">"#accordionExample"</span><span class="paragraph">&gt;</span>
+                <span class="paragraph">&lt;</span><span class="div">div</span> <span class="class">class</span><span >=</span><span class="class-name">"accordion-body"</span><span class="paragraph">&gt;</span>
+                  <span class="paragraph">&lt;</span><span class="div">strong</span><span class="paragraph">&gt;</span>This is the third item's accordion body.<span class="paragraph">&lt;/</span><span class="div">strong</span><span class="paragraph">&gt;</span> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <span class="paragraph">&lt;</span><span class="div">code</span><span class="paragraph">&gt;</span>.accordion-body<span class="paragraph">&lt;/</span><span class="div">code</span><span class="paragraph">&gt;</span>, though the transition does limit overflow.
+                <span class="paragraph">&lt;/</span><span class="div">div</span><span class="paragraph">&gt;</span>
+              <span class="paragraph">&lt;/</span><span class="div">div</span><span class="paragraph">&gt;</span>
+            <span class="paragraph">&lt;/</span><span class="div">div</span><span class="paragraph">&gt;</span>
+          <span class="paragraph">&lt;/</span><span class="div">div</span><span class="paragraph">&gt;</span></code></pre>
+                    </div>
+
+
+                    <!-- forms -->
+                    <h4 class="pt-4 mt-sm-5 mt-3">Forms</h4>
+                    <div class="bd-example">
+                        <form>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="exampleInputEmail1"
+                                    aria-describedby="emailHelp">
+                                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1">
+                            </div>
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+                    <div class="highlight">
+                        <pre class="chroma"><code class="language-html" data-lang="html"><span class="paragraph">&lt;</span><span class="div">form</span><span class="paragraph">&gt;</span>
+            <span class="paragraph">&lt;</span><span class="div">div</span> <span class="class">class</span><span >=</span><span class="class-name">"mb-3"</span><span class="paragraph">&gt;</span>
+              <span class="paragraph">&lt;</span><span class="div">label</span> <span class="class">for</span><span >=</span><span class="class-name">"exampleInputEmail1"</span> <span class="class">class</span><span >=</span><span class="class-name">"form-label"</span><span class="paragraph">&gt;</span>Email address<span class="paragraph">&lt;/</span><span class="div">label</span><span class="paragraph">&gt;</span>
+              <span class="paragraph">&lt;</span><span class="div">input</span> <span class="class">type</span><span >=</span><span class="class-name">"email"</span> <span class="class">class</span><span >=</span><span class="class-name">"form-control"</span> <span class="class">id</span><span >=</span><span class="class-name">"exampleInputEmail1"</span> <span class="class">aria-describedby</span><span >=</span><span class="class-name">"emailHelp"</span><span class="paragraph">&gt;</span>
+              <span class="paragraph">&lt;</span><span class="div">div</span> <span class="class">id</span><span >=</span><span class="class-name">"emailHelp"</span> <span class="class">class</span><span >=</span><span class="class-name">"form-text"</span><span class="paragraph">&gt;</span>We'll never share your email with anyone else.<span class="paragraph">&lt;/</span><span class="div">div</span><span class="paragraph">&gt;</span>
+            <span class="paragraph">&lt;/</span><span class="div">div</span><span class="paragraph">&gt;</span>
+            <span class="paragraph">&lt;</span><span class="div">div</span> <span class="class">class</span><span >=</span><span class="class-name">"mb-3"</span><span class="paragraph">&gt;</span>
+              <span class="paragraph">&lt;</span><span class="div">label</span> <span class="class">for</span><span >=</span><span class="class-name">"exampleInputPassword1"</span> <span class="class">class</span><span >=</span><span class="class-name">"form-label"</span><span class="paragraph">&gt;</span>Password<span class="paragraph">&lt;/</span><span class="div">label</span><span class="paragraph">&gt;</span>
+              <span class="paragraph">&lt;</span><span class="div">input</span> <span class="class">type</span><span >=</span><span class="class-name">"password"</span> <span class="class">class</span><span >=</span><span class="class-name">"form-control"</span> <span class="class">id</span><span >=</span><span class="class-name">"exampleInputPassword1"</span><span class="paragraph">&gt;</span>
+            <span class="paragraph">&lt;/</span><span class="div">div</span><span class="paragraph">&gt;</span>
+            <span class="paragraph">&lt;</span><span class="div">div</span> <span class="class">class</span><span >=</span><span class="class-name">"mb-3 form-check"</span><span class="paragraph">&gt;</span>
+              <span class="paragraph">&lt;</span><span class="div">input</span> <span class="class">type</span><span >=</span><span class="class-name">"checkbox"</span> <span class="class">class</span><span >=</span><span class="class-name">"form-check-input"</span> <span class="class">id</span><span >=</span><span class="class-name">"exampleCheck1"</span><span class="paragraph">&gt;</span>
+              <span class="paragraph">&lt;</span><span class="div">label</span> <span class="class">class</span><span >=</span><span class="class-name">"form-check-label"</span> <span class="class">for</span><span >=</span><span class="class-name">"exampleCheck1"</span><span class="paragraph">&gt;</span>Check me out<span class="paragraph">&lt;/</span><span class="div">label</span><span class="paragraph">&gt;</span>
+            <span class="paragraph">&lt;/</span><span class="div">div</span><span class="paragraph">&gt;</span>
+            <span class="paragraph">&lt;</span><span class="div">button</span> <span class="class">type</span><span >=</span><span class="class-name">"submit"</span> <span class="class">class</span><span >=</span><span class="class-name">"btn btn-primary"</span><span class="paragraph">&gt;</span>Submit<span class="paragraph">&lt;/</span><span class="div">button</span><span class="paragraph">&gt;</span>
+        <span class="paragraph">&lt;/</span><span class="div">form</span><span class="paragraph">&gt;</span></code></pre>
+                    </div>
+                    <h5 class="pt-4 pb-2">Sizing</h5>
+                    <div class="bd-example">
+                        <input class="form-control form-control-lg" type="text" placeholder=".form-control-lg"
+                            aria-label=".form-control-lg example">
+                        <input class="form-control" type="text" placeholder="Default input"
+                            aria-label="default input example">
+                        <input class="form-control form-control-sm" type="text" placeholder=".form-control-sm"
+                            aria-label=".form-control-sm example">
+                    </div>
+                    <div class="highlight">
+                        <pre
+                            class="chroma"><code class="language-html" data-lang="html"><span class="paragraph">&lt;</span><span class="div">input</span> <span class="class">class</span><span >=</span><span class="class-name">"form-control form-control-lg"</span> <span class="class">type</span><span >=</span><span class="class-name">"text"</span> <span class="class">placeholder</span><span >=</span><span class="class-name">".form-control-lg"</span> <span class="class">aria-label</span><span >=</span><span class="class-name">".form-control-lg example"</span><span class="paragraph">&gt;</span>
+        <span class="paragraph">&lt;</span><span class="div">input</span> <span class="class">class</span><span >=</span><span class="class-name">"form-control"</span> <span class="class">type</span><span >=</span><span class="class-name">"text"</span> <span class="class">placeholder</span><span >=</span><span class="class-name">"Default input"</span> <span class="class">aria-label</span><span >=</span><span class="class-name">"default input example"</span><span class="paragraph">&gt;</span>
+        <span class="paragraph">&lt;</span><span class="div">input</span> <span class="class">class</span><span >=</span><span class="class-name">"form-control form-control-sm"</span> <span class="class">type</span><span >=</span><span class="class-name">"text"</span> <span class="class">placeholder</span><span >=</span><span class="class-name">".form-control-sm"</span> <span class="class">aria-label</span><span >=</span><span class="class-name">".form-control-sm example"</span><span class="paragraph">&gt;</span></code></pre>
+                    </div>
+
+                    <h5 class="pt-4 pb-2">Readonly plain text</h5>
+                    <div class="bd-example">
+                        <form class="row g-3">
+                            <div class="col-auto">
+                                <label for="staticEmail2" class="visually-hidden">Email</label>
+                                <input type="text" readonly="" class="form-control-plaintext" id="staticEmail2"
+                                    value="email@example.com">
+                            </div>
+                            <div class="col-auto">
+                                <label for="inputPassword2" class="visually-hidden">Password</label>
+                                <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
+                            </div>
+                            <div class="col-auto">
+                                <button type="submit" class="btn btn-primary mb-3">Confirm identity</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="highlight">
+                        <pre class="chroma"><code class="language-html" data-lang="html"><span class="paragraph">&lt;</span><span class="div">form</span> <span class="class">class</span><span >=</span><span class="class-name">"row g-3"</span><span class="paragraph">&gt;</span>
+            <span class="paragraph">&lt;</span><span class="div">div</span> <span class="class">class</span><span >=</span><span class="class-name">"col-auto"</span><span class="paragraph">&gt;</span>
+              <span class="paragraph">&lt;</span><span class="div">label</span> <span class="class">for</span><span >=</span><span class="class-name">"staticEmail2"</span> <span class="class">class</span><span >=</span><span class="class-name">"visually-hidden"</span><span class="paragraph">&gt;</span>Email<span class="paragraph">&lt;/</span><span class="div">label</span><span class="paragraph">&gt;</span>
+              <span class="paragraph">&lt;</span><span class="div">input</span> <span class="class">type</span><span >=</span><span class="class-name">"text"</span> <span class="class">readonly</span> <span class="class">class</span><span >=</span><span class="class-name">"form-control-plaintext"</span> <span class="class">id</span><span >=</span><span class="class-name">"staticEmail2"</span> <span class="class">value</span><span >=</span><span class="class-name">"email@example.com"</span><span class="paragraph">&gt;</span>
+            <span class="paragraph">&lt;/</span><span class="div">div</span><span class="paragraph">&gt;</span>
+            <span class="paragraph">&lt;</span><span class="div">div</span> <span class="class">class</span><span >=</span><span class="class-name">"col-auto"</span><span class="paragraph">&gt;</span>
+              <span class="paragraph">&lt;</span><span class="div">label</span> <span class="class">for</span><span >=</span><span class="class-name">"inputPassword2"</span> <span class="class">class</span><span >=</span><span class="class-name">"visually-hidden"</span><span class="paragraph">&gt;</span>Password<span class="paragraph">&lt;/</span><span class="div">label</span><span class="paragraph">&gt;</span>
+              <span class="paragraph">&lt;</span><span class="div">input</span> <span class="class">type</span><span >=</span><span class="class-name">"password"</span> <span class="class">class</span><span >=</span><span class="class-name">"form-control"</span> <span class="class">id</span><span >=</span><span class="class-name">"inputPassword2"</span> <span class="class">placeholder</span><span >=</span><span class="class-name">"Password"</span><span class="paragraph">&gt;</span>
+            <span class="paragraph">&lt;/</span><span class="div">div</span><span class="paragraph">&gt;</span>
+            <span class="paragraph">&lt;</span><span class="div">div</span> <span class="class">class</span><span >=</span><span class="class-name">"col-auto"</span><span class="paragraph">&gt;</span>
+              <span class="paragraph">&lt;</span><span class="div">button</span> <span class="class">type</span><span >=</span><span class="class-name">"submit"</span> <span class="class">class</span><span >=</span><span class="class-name">"btn btn-primary mb-3"</span><span class="paragraph">&gt;</span>Confirm identity<span class="paragraph">&lt;/</span><span class="div">button</span><span class="paragraph">&gt;</span>
+            <span class="paragraph">&lt;/</span><span class="div">div</span><span class="paragraph">&gt;</span>
+        <span class="paragraph">&lt;/</span><span class="div">form</span><span class="paragraph">&gt;</span></code></pre>
+                    </div>
+
+                    <h5 class="pt-4 pb-2">File input</h5>
+                    <div class="bd-example">
+                        <div class="mb-3">
+                            <label for="formFile" class="form-label">Default file input example</label>
+                            <input class="form-control" type="file" id="formFile">
+                        </div>
+                        <div class="mb-3">
+                            <label for="formFileMultiple" class="form-label">Multiple files input example</label>
+                            <input class="form-control" type="file" id="formFileMultiple" multiple="">
+                        </div>
+                        <div class="mb-3">
+                            <label for="formFileDisabled" class="form-label">Disabled file input example</label>
+                            <input class="form-control" type="file" id="formFileDisabled" disabled="">
+                        </div>
+                        <div class="mb-3">
+                            <label for="formFileSm" class="form-label">Small file input example</label>
+                            <input class="form-control form-control-sm" id="formFileSm" type="file">
+                        </div>
+                        <div>
+                            <label for="formFileLg" class="form-label">Large file input example</label>
+                            <input class="form-control form-control-lg" id="formFileLg" type="file">
+                        </div>
+                    </div>
+                    <div class="highlight">
+                        <pre class="chroma"><code class="language-html" data-lang="html"><span class="paragraph">&lt;</span><span class="div">div</span> <span class="class">class</span><span >=</span><span class="class-name">"mb-3"</span><span class="paragraph">&gt;</span>
+            <span class="paragraph">&lt;</span><span class="div">label</span> <span class="class">for</span><span >=</span><span class="class-name">"formFile"</span> <span class="class">class</span><span >=</span><span class="class-name">"form-label"</span><span class="paragraph">&gt;</span>Default file input example<span class="paragraph">&lt;/</span><span class="div">label</span><span class="paragraph">&gt;</span>
+            <span class="paragraph">&lt;</span><span class="div">input</span> <span class="class">class</span><span >=</span><span class="class-name">"form-control"</span> <span class="class">type</span><span >=</span><span class="class-name">"file"</span> <span class="class">id</span><span >=</span><span class="class-name">"formFile"</span><span class="paragraph">&gt;</span>
+          <span class="paragraph">&lt;/</span><span class="div">div</span><span class="paragraph">&gt;</span>
+          <span class="paragraph">&lt;</span><span class="div">div</span> <span class="class">class</span><span >=</span><span class="class-name">"mb-3"</span><span class="paragraph">&gt;</span>
+            <span class="paragraph">&lt;</span><span class="div">label</span> <span class="class">for</span><span >=</span><span class="class-name">"formFileMultiple"</span> <span class="class">class</span><span >=</span><span class="class-name">"form-label"</span><span class="paragraph">&gt;</span>Multiple files input example<span class="paragraph">&lt;/</span><span class="div">label</span><span class="paragraph">&gt;</span>
+            <span class="paragraph">&lt;</span><span class="div">input</span> <span class="class">class</span><span >=</span><span class="class-name">"form-control"</span> <span class="class">type</span><span >=</span><span class="class-name">"file"</span> <span class="class">id</span><span >=</span><span class="class-name">"formFileMultiple"</span> <span class="class">multiple</span><span class="paragraph">&gt;</span>
+          <span class="paragraph">&lt;/</span><span class="div">div</span><span class="paragraph">&gt;</span>
+          <span class="paragraph">&lt;</span><span class="div">div</span> <span class="class">class</span><span >=</span><span class="class-name">"mb-3"</span><span class="paragraph">&gt;</span>
+            <span class="paragraph">&lt;</span><span class="div">label</span> <span class="class">for</span><span >=</span><span class="class-name">"formFileDisabled"</span> <span class="class">class</span><span >=</span><span class="class-name">"form-label"</span><span class="paragraph">&gt;</span>Disabled file input example<span class="paragraph">&lt;/</span><span class="div">label</span><span class="paragraph">&gt;</span>
+            <span class="paragraph">&lt;</span><span class="div">input</span> <span class="class">class</span><span >=</span><span class="class-name">"form-control"</span> <span class="class">type</span><span >=</span><span class="class-name">"file"</span> <span class="class">id</span><span >=</span><span class="class-name">"formFileDisabled"</span> <span class="class">disabled</span><span class="paragraph">&gt;</span>
+          <span class="paragraph">&lt;/</span><span class="div">div</span><span class="paragraph">&gt;</span>
+          <span class="paragraph">&lt;</span><span class="div">div</span> <span class="class">class</span><span >=</span><span class="class-name">"mb-3"</span><span class="paragraph">&gt;</span>
+            <span class="paragraph">&lt;</span><span class="div">label</span> <span class="class">for</span><span >=</span><span class="class-name">"formFileSm"</span> <span class="class">class</span><span >=</span><span class="class-name">"form-label"</span><span class="paragraph">&gt;</span>Small file input example<span class="paragraph">&lt;/</span><span class="div">label</span><span class="paragraph">&gt;</span>
+            <span class="paragraph">&lt;</span><span class="div">input</span> <span class="class">class</span><span >=</span><span class="class-name">"form-control form-control-sm"</span> <span class="class">id</span><span >=</span><span class="class-name">"formFileSm"</span> <span class="class">type</span><span >=</span><span class="class-name">"file"</span><span class="paragraph">&gt;</span>
+          <span class="paragraph">&lt;/</span><span class="div">div</span><span class="paragraph">&gt;</span>
+          <span class="paragraph">&lt;</span><span class="div">div</span><span class="paragraph">&gt;</span>
+            <span class="paragraph">&lt;</span><span class="div">label</span> <span class="class">for</span><span >=</span><span class="class-name">"formFileLg"</span> <span class="class">class</span><span >=</span><span class="class-name">"form-label"</span><span class="paragraph">&gt;</span>Large file input example<span class="paragraph">&lt;/</span><span class="div">label</span><span class="paragraph">&gt;</span>
+            <span class="paragraph">&lt;</span><span class="div">input</span> <span class="class">class</span><span >=</span><span class="class-name">"form-control form-control-lg"</span> <span class="class">id</span><span >=</span><span class="class-name">"formFileLg"</span> <span class="class">type</span><span >=</span><span class="class-name">"file"</span><span class="paragraph">&gt;</span>
+          <span class="paragraph">&lt;/</span><span class="div">div</span><span class="paragraph">&gt;</span></code></pre>
+                    </div>
+
+                    <h5 class="pt-4 pb-2">Color</h5>
+                    <div class="bd-example">
+                        <label for="exampleColorInput" class="form-label">Color picker</label>
+                        <input type="color" class="form-control form-control-color" id="exampleColorInput"
+                            value="#563d7c" title="Choose your color">
+                    </div>
+                    <div class="highlight">
+                        <pre
+                            class="chroma"><code class="language-html" data-lang="html"><span class="paragraph">&lt;</span><span class="div">label</span> <span class="class">for</span><span >=</span><span class="class-name">"exampleColorInput"</span> <span class="class">class</span><span >=</span><span class="class-name">"form-label"</span><span class="paragraph">&gt;</span>Color picker<span class="paragraph">&lt;/</span><span class="div">label</span><span class="paragraph">&gt;</span>
+        <span class="paragraph">&lt;</span><span class="div">input</span> <span class="class">type</span><span >=</span><span class="class-name">"color"</span> <span class="class">class</span><span >=</span><span class="class-name">"form-control form-control-color"</span> <span class="class">id</span><span >=</span><span class="class-name">"exampleColorInput"</span> <span class="class">value</span><span >=</span><span class="class-name">"#563d7c"</span> <span class="class">title</span><span >=</span><span class="class-name">"Choose your color"</span><span class="paragraph">&gt;</span></code></pre>
+                    </div>
+                    <!-- //forms -->
+
+                    <!-- breadcrumb -->
+                    <h4 class="pt-md-4 pb-2">Breadcrumb</h4>
+                    <p>Indicate the current page’s location within a navigational hierarchy that automatically adds
+                        separators via CSS.</p>
+                    <div class="bd-example">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item active" aria-current="page">Home</li>
+                            </ol>
+                        </nav>
+
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Library</li>
+                            </ol>
+                        </nav>
+
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item"><a href="#">Library</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Data</li>
+                            </ol>
+                        </nav>
+                    </div>
+                    <div class="highlight">
+                        <pre class="chroma"><code class="language-html" data-lang="html"><span class="paragraph">&lt;</span><span class="div">nav</span> <span class="class">aria-label</span><span >=</span><span class="class-name">"breadcrumb"</span><span class="paragraph">&gt;</span>
+            <span class="paragraph">&lt;</span><span class="div">ol</span> <span class="class">class</span><span >=</span><span class="class-name">"breadcrumb"</span><span class="paragraph">&gt;</span>
+              <span class="paragraph">&lt;</span><span class="div">li</span> <span class="class">class</span><span >=</span><span class="class-name">"breadcrumb-item active"</span> <span class="class">aria-current</span><span >=</span><span class="class-name">"page"</span><span class="paragraph">&gt;</span>Home<span class="paragraph">&lt;/</span><span class="div">li</span><span class="paragraph">&gt;</span>
+            <span class="paragraph">&lt;/</span><span class="div">ol</span><span class="paragraph">&gt;</span>
+          <span class="paragraph">&lt;/</span><span class="div">nav</span><span class="paragraph">&gt;</span>
+          
+          <span class="paragraph">&lt;</span><span class="div">nav</span> <span class="class">aria-label</span><span >=</span><span class="class-name">"breadcrumb"</span><span class="paragraph">&gt;</span>
+            <span class="paragraph">&lt;</span><span class="div">ol</span> <span class="class">class</span><span >=</span><span class="class-name">"breadcrumb"</span><span class="paragraph">&gt;</span>
+              <span class="paragraph">&lt;</span><span class="div">li</span> <span class="class">class</span><span >=</span><span class="class-name">"breadcrumb-item"</span><span class="paragraph">&gt;&lt;</span><span class="div">a</span> <span class="class">href</span><span >=</span><span class="class-name">"#"</span><span class="paragraph">&gt;</span>Home<span class="paragraph">&lt;/</span><span class="div">a</span><span class="paragraph">&gt;&lt;/</span><span class="div">li</span><span class="paragraph">&gt;</span>
+              <span class="paragraph">&lt;</span><span class="div">li</span> <span class="class">class</span><span >=</span><span class="class-name">"breadcrumb-item active"</span> <span class="class">aria-current</span><span >=</span><span class="class-name">"page"</span><span class="paragraph">&gt;</span>Library<span class="paragraph">&lt;/</span><span class="div">li</span><span class="paragraph">&gt;</span>
+            <span class="paragraph">&lt;/</span><span class="div">ol</span><span class="paragraph">&gt;</span>
+          <span class="paragraph">&lt;/</span><span class="div">nav</span><span class="paragraph">&gt;</span>
+          
+          <span class="paragraph">&lt;</span><span class="div">nav</span> <span class="class">aria-label</span><span >=</span><span class="class-name">"breadcrumb"</span><span class="paragraph">&gt;</span>
+            <span class="paragraph">&lt;</span><span class="div">ol</span> <span class="class">class</span><span >=</span><span class="class-name">"breadcrumb"</span><span class="paragraph">&gt;</span>
+              <span class="paragraph">&lt;</span><span class="div">li</span> <span class="class">class</span><span >=</span><span class="class-name">"breadcrumb-item"</span><span class="paragraph">&gt;&lt;</span><span class="div">a</span> <span class="class">href</span><span >=</span><span class="class-name">"#"</span><span class="paragraph">&gt;</span>Home<span class="paragraph">&lt;/</span><span class="div">a</span><span class="paragraph">&gt;&lt;/</span><span class="div">li</span><span class="paragraph">&gt;</span>
+              <span class="paragraph">&lt;</span><span class="div">li</span> <span class="class">class</span><span >=</span><span class="class-name">"breadcrumb-item"</span><span class="paragraph">&gt;&lt;</span><span class="div">a</span> <span class="class">href</span><span >=</span><span class="class-name">"#"</span><span class="paragraph">&gt;</span>Library<span class="paragraph">&lt;/</span><span class="div">a</span><span class="paragraph">&gt;&lt;/</span><span class="div">li</span><span class="paragraph">&gt;</span>
+              <span class="paragraph">&lt;</span><span class="div">li</span> <span class="class">class</span><span >=</span><span class="class-name">"breadcrumb-item active"</span> <span class="class">aria-current</span><span >=</span><span class="class-name">"page"</span><span class="paragraph">&gt;</span>Data<span class="paragraph">&lt;/</span><span class="div">li</span><span class="paragraph">&gt;</span>
+            <span class="paragraph">&lt;/</span><span class="div">ol</span><span class="paragraph">&gt;</span>
+          <span class="paragraph">&lt;/</span><span class="div">nav</span><span class="paragraph">&gt;</span></code></pre>
+                    </div>
+                    <!-- //breadcrumb -->
+                    <!-- dividers -->
+                    <h5 class="pt-4 pb-2">Dividers</h5>
+                    <div class="bd-example">
+                        <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Library</li>
+                            </ol>
+                        </nav>
+                    </div>
+                    <div class="highlight">
+                        <pre class="chroma"><code class="language-html" data-lang="html"><span class="paragraph">&lt;</span><span class="div">nav</span> <span class="class">style</span><span >=</span><span class="class-name">"--bs-breadcrumb-divider: '&gt;';"</span> <span class="class">aria-label</span><span >=</span><span class="class-name">"breadcrumb"</span><span class="paragraph">&gt;</span>
+            <span class="paragraph">&lt;</span><span class="div">ol</span> <span class="class">class</span><span >=</span><span class="class-name">"breadcrumb"</span><span class="paragraph">&gt;</span>
+                <span class="paragraph">&lt;</span><span class="div">li</span> <span class="class">class</span><span >=</span><span class="class-name">"breadcrumb-item"</span><span class="paragraph">&gt;&lt;</span><span class="div">a</span> <span class="class">href</span><span >=</span><span class="class-name">"#"</span><span class="paragraph">&gt;</span>Home<span class="paragraph">&lt;/</span><span class="div">a</span><span class="paragraph">&gt;&lt;/</span><span class="div">li</span><span class="paragraph">&gt;</span>
+                <span class="paragraph">&lt;</span><span class="div">li</span> <span class="class">class</span><span >=</span><span class="class-name">"breadcrumb-item active"</span> <span class="class">aria-current</span><span >=</span><span class="class-name">"page"</span><span class="paragraph">&gt;</span>Library<span class="paragraph">&lt;/</span><span class="div">li</span><span class="paragraph">&gt;</span>
+            <span class="paragraph">&lt;/</span><span class="div">ol</span><span class="paragraph">&gt;</span>
+        <span class="paragraph">&lt;/</span><span class="div">nav</span><span class="paragraph">&gt;</span></code></pre>
+                    </div>
+                    <!-- //dividers -->
+                    <!-- cards -->
+                    <h4 class="pt-5 pb-3">Cards</h4>
+                    <div class="bd-example">
+                        <div class="card" style="width: 18rem;">
+                            <img src="https://wp.w3layouts.com/laundries/wp-content/themes/laundries/assets/images/card.jpg"
+                                class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk
+                                    of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="highlight">
+                        <pre class="chroma"><code class="language-html" data-lang="html"><span class="paragraph">&lt;</span><span class="div">div</span> <span class="class">class</span><span >=</span><span class="class-name">"card"</span> <span class="class">style</span><span >=</span><span class="class-name">"width: 18rem;"</span><span class="paragraph">&gt;</span>
+            <span class="paragraph">&lt;</span><span class="div">img</span> <span class="class">src</span><span >=</span><span class="class-name">"images/card.jpg"</span> <span class="class">class</span><span >=</span><span class="class-name">"card-img-top"</span> <span class="class">alt</span><span >=</span><span class="class-name">"..."</span><span class="paragraph">&gt;</span>
+            <span class="paragraph">&lt;</span><span class="div">div</span> <span class="class">class</span><span >=</span><span class="class-name">"card-body"</span><span class="paragraph">&gt;</span>
+              <span class="paragraph">&lt;</span><span class="div">h5</span> <span class="class">class</span><span >=</span><span class="class-name">"card-title"</span><span class="paragraph">&gt;</span>Card title<span class="paragraph">&lt;/</span><span class="div">h5</span><span class="paragraph">&gt;</span>
+              <span class="paragraph">&lt;</span><span class="div">p</span> <span class="class">class</span><span >=</span><span class="class-name">"card-text"</span><span class="paragraph">&gt;</span>Some quick example text to build on the card title and make up the bulk of the card's content.<span class="paragraph">&lt;/</span><span class="div">p</span><span class="paragraph">&gt;</span>
+              <span class="paragraph">&lt;</span><span class="div">a</span> <span class="class">href</span><span >=</span><span class="class-name">"#"</span> <span class="class">class</span><span >=</span><span class="class-name">"btn btn-primary"</span><span class="paragraph">&gt;</span>Go somewhere<span class="paragraph">&lt;/</span><span class="div">a</span><span class="paragraph">&gt;</span>
+            <span class="paragraph">&lt;/</span><span class="div">div</span><span class="paragraph">&gt;</span>
+          <span class="paragraph">&lt;/</span><span class="div">div</span><span class="paragraph">&gt;</span></code></pre>
+                    </div>
+                    <!-- //cards -->
+
+                    <!-- blockquotes -->
+                    <h4 class="pt-5 pb-2">Blockquotes with Naming a source</h4>
+                    <div class="bd-example">
+                        <figure>
+                            <blockquote class="blockquote">
+                                <p>A well-known quote, contained in a blockquote element.</p>
+                            </blockquote>
+                            <figcaption class="blockquote-footer">
+                                Someone famous in <cite title="Source Title">Source Title</cite>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="highlight">
+                        <pre class="chroma"><code class="language-html" data-lang="html"><span class="paragraph">&lt;</span><span class="div">figure</span><span class="paragraph">&gt;</span>
+            <span class="paragraph">&lt;</span><span class="div">blockquote</span> <span class="class">class</span><span >=</span><span class="class-name">"blockquote"</span><span class="paragraph">&gt;</span>
+              <span class="paragraph">&lt;</span><span class="div">p</span><span class="paragraph">&gt;</span>A well-known quote, contained in a blockquote element.<span class="paragraph">&lt;/</span><span class="div">p</span><span class="paragraph">&gt;</span>
+            <span class="paragraph">&lt;/</span><span class="div">blockquote</span><span class="paragraph">&gt;</span>
+            <span class="paragraph">&lt;</span><span class="div">figcaption</span> <span class="class">class</span><span >=</span><span class="class-name">"blockquote-footer"</span><span class="paragraph">&gt;</span>
+              Someone famous in <span class="paragraph">&lt;</span><span class="div">cite</span> <span class="class">title</span><span >=</span><span class="class-name">"Source Title"</span><span class="paragraph">&gt;</span>Source Title<span class="paragraph">&lt;/</span><span class="div">cite</span><span class="paragraph">&gt;</span>
+            <span class="paragraph">&lt;/</span><span class="div">figcaption</span><span class="paragraph">&gt;</span>
+          <span class="paragraph">&lt;/</span><span class="div">figure</span><span class="paragraph">&gt;</span></code></pre>
+                    </div>
+                    <!-- //blockquotes -->
+
+                    <!-- buttons -->
+                    <h4 class="pt-5 pb-2">Buttons</h4>
+                    <div class="bd-example">
+                        <button type="button" class="btn btn-primary">Primary</button>
+                        <button type="button" class="btn btn-secondary">Secondary</button>
+                        <button type="button" class="btn btn-success">Success</button>
+                        <button type="button" class="btn btn-danger">Danger</button>
+                        <button type="button" class="btn btn-warning">Warning</button>
+                        <button type="button" class="btn btn-info">Info</button>
+                        <button type="button" class="btn btn-light">Light</button>
+                        <button type="button" class="btn btn-dark">Dark</button>
+
+                        <button type="button" class="btn btn-link">Link</button>
+                    </div>
+                    <div class="highlight">
+                        <pre
+                            class="chroma"><code class="language-html" data-lang="html"><span class="paragraph">&lt;</span><span class="div">button</span> <span class="class">type</span><span >=</span><span class="class-name">"button"</span> <span class="class">class</span><span >=</span><span class="class-name">"btn btn-primary"</span><span class="paragraph">&gt;</span>Primary<span class="paragraph">&lt;/</span><span class="div">button</span><span class="paragraph">&gt;</span>
+        <span class="paragraph">&lt;</span><span class="div">button</span> <span class="class">type</span><span >=</span><span class="class-name">"button"</span> <span class="class">class</span><span >=</span><span class="class-name">"btn btn-secondary"</span><span class="paragraph">&gt;</span>Secondary<span class="paragraph">&lt;/</span><span class="div">button</span><span class="paragraph">&gt;</span>
+        <span class="paragraph">&lt;</span><span class="div">button</span> <span class="class">type</span><span >=</span><span class="class-name">"button"</span> <span class="class">class</span><span >=</span><span class="class-name">"btn btn-success"</span><span class="paragraph">&gt;</span>Success<span class="paragraph">&lt;/</span><span class="div">button</span><span class="paragraph">&gt;</span>
+        <span class="paragraph">&lt;</span><span class="div">button</span> <span class="class">type</span><span >=</span><span class="class-name">"button"</span> <span class="class">class</span><span >=</span><span class="class-name">"btn btn-danger"</span><span class="paragraph">&gt;</span>Danger<span class="paragraph">&lt;/</span><span class="div">button</span><span class="paragraph">&gt;</span>
+        <span class="paragraph">&lt;</span><span class="div">button</span> <span class="class">type</span><span >=</span><span class="class-name">"button"</span> <span class="class">class</span><span >=</span><span class="class-name">"btn btn-warning"</span><span class="paragraph">&gt;</span>Warning<span class="paragraph">&lt;/</span><span class="div">button</span><span class="paragraph">&gt;</span>
+        <span class="paragraph">&lt;</span><span class="div">button</span> <span class="class">type</span><span >=</span><span class="class-name">"button"</span> <span class="class">class</span><span >=</span><span class="class-name">"btn btn-info"</span><span class="paragraph">&gt;</span>Info<span class="paragraph">&lt;/</span><span class="div">button</span><span class="paragraph">&gt;</span>
+        <span class="paragraph">&lt;</span><span class="div">button</span> <span class="class">type</span><span >=</span><span class="class-name">"button"</span> <span class="class">class</span><span >=</span><span class="class-name">"btn btn-light"</span><span class="paragraph">&gt;</span>Light<span class="paragraph">&lt;/</span><span class="div">button</span><span class="paragraph">&gt;</span>
+        <span class="paragraph">&lt;</span><span class="div">button</span> <span class="class">type</span><span >=</span><span class="class-name">"button"</span> <span class="class">class</span><span >=</span><span class="class-name">"btn btn-dark"</span><span class="paragraph">&gt;</span>Dark<span class="paragraph">&lt;/</span><span class="div">button</span><span class="paragraph">&gt;</span>
+        
+        <span class="paragraph">&lt;</span><span class="div">button</span> <span class="class">type</span><span >=</span><span class="class-name">"button"</span> <span class="class">class</span><span >=</span><span class="class-name">"btn btn-link"</span><span class="paragraph">&gt;</span>Link<span class="paragraph">&lt;/</span><span class="div">button</span><span class="paragraph">&gt;</span></code></pre>
+                    </div>
+                    <!-- //buttons -->
+
+                    <!-- flex -->
+                    <h4 class="pt-5 pb-2">Flex Properties</h4>
+                    <h5 class="pt-4">d-flex</h5>
+                    <div class="bd-example">
+                        <div class="d-flex p-2 bg-flex mb-1">I'm a flexbox container!</div>
+                    </div>
+                    <figure class="highlight">
+                        <pre><code class="language-html" data-lang="html"><span class="div">&lt;div</span> <span class="class">class=</span><span class="class-name">"d-flex p-2 bd-highlight"</span><span class="div">&gt;</span>I'm a flexbox container!<span class="div">&lt;/div&gt;</span></code></pre>
+                    </figure>
+                    <h5 class="pt-4">d-inline-flex</h5>
+                    <div class="bd-example">
+                        <div class="d-inline-flex p-2 bg-flex mb-1">I'm an inline flexbox container!</div>
+                    </div>
+                    <figure class="highlight">
+                        <pre><code class="language-html" data-lang="html"><span class="div">&lt;div</span> <span class="class">class=</span><span class="class-name">"d-inline-flex p-2 bd-highlight"</span><span class="div">&gt;</span>I'm an inline flexbox container!<span class="div">&lt;/div&gt;</span></code></pre>
+                    </figure>
+                    <!-- Flex Direction -->
+                    <h4 class="pt-5 pb-2">Flex Direction</h4>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <h5 class="pt-4">flex-row</h5>
+                            <div class="bd-example">
+                                <div class="d-flex flex-row bg-flex">
+                                    <div class="p-2 bg-flex bg-flex-item">Flex item 1</div>
+                                    <div class="p-2 bg-flex bg-flex-item">Flex item 2</div>
+                                    <div class="p-2 bg-flex bg-flex-item">Flex item 3</div>
+                                </div>
+                            </div>
+                            <figure class="highlight">
+                                <pre><code class="language-html" data-lang="html"><span class="div">&lt;div</span> <span class="class">class=</span><span class="class-name">"d-flex flex-row bd-highlight mb-3"</span><span class="div">&gt;</span>
+          <span class="div">&lt;div</span> <span class="class">class=</span><span class="class-name">"p-2 bd-highlight"</span><span class="div">&gt;</span>Flex item 1<span class="div">&lt;/div&gt;</span>
+          <span class="div">&lt;div</span> <span class="class">class=</span><span class="class-name">"p-2 bd-highlight"</span><span class="div">&gt;</span>Flex item 2<span class="div">&lt;/div&gt;</span>
+          <span class="div">&lt;div</span> <span class="class">class=</span><span class="class-name">"p-2 bd-highlight"</span><span class="div">&gt;</span>Flex item 3<span class="div">&lt;/div&gt;</span>
+        <span class="div">&lt;/div&gt;</span></code></pre>
+                            </figure>
+                        </div>
+                        <div class="col-lg-6">
+                            <h5 class="pt-4">flex-row-reverse</h5>
+                            <div class="bd-example">
+                                <div class="d-flex flex-row-reverse bg-flex">
+                                    <div class="p-2 bg-flex bg-flex-item">Flex item 1</div>
+                                    <div class="p-2 bg-flex bg-flex-item">Flex item 2</div>
+                                    <div class="p-2 bg-flex bg-flex-item">Flex item 3</div>
+                                </div>
+                            </div>
+                            <figure class="highlight">
+                                <pre><code class="language-html" data-lang="html"><span class="div">&lt;div</span> <span class="class">class=</span><span class="class-name">"d-flex flex-row-reverse bd-highlight"</span><span class="div">&gt;</span>
+          <span class="div">&lt;div</span> <span class="class">class=</span><span class="class-name">"p-2 bd-highlight"</span><span class="div">&gt;</span>Flex item 1<span class="div">&lt;/div&gt;</span>
+          <span class="div">&lt;div</span> <span class="class">class=</span><span class="class-name">"p-2 bd-highlight"</span><span class="div">&gt;</span>Flex item 2<span class="div">&lt;/div&gt;</span>
+          <span class="div">&lt;div</span> <span class="class">class=</span><span class="class-name">"p-2 bd-highlight"</span><span class="div">&gt;</span>Flex item 3<span class="div">&lt;/div&gt;</span>
+        <span class="div">&lt;/div&gt;</span></code></pre>
+                            </figure>
+                        </div>
+                    </div>
+                    <!-- Justify Content -->
+                    <h4 class="pt-5 pb-3">Justify Content</h4>
+                    <div class="bd-example">
+                        <div class="d-flex justify-content-start bg-flex mb-3">
+                            <div class="p-2 bg-flex bg-flex-item">Flex item 1</div>
+                            <div class="p-2 bg-flex bg-flex-item">Flex item 2</div>
+                            <div class="p-2 bg-flex bg-flex-item">Flex item 3</div>
+                        </div>
+                        <div class="d-flex justify-content-end bg-flex mb-3">
+                            <div class="p-2 bg-flex bg-flex-item">Flex item 1</div>
+                            <div class="p-2 bg-flex bg-flex-item">Flex item 2</div>
+                            <div class="p-2 bg-flex bg-flex-item">Flex item 3</div>
+                        </div>
+                        <div class="d-flex justify-content-center bg-flex mb-3">
+                            <div class="p-2 bg-flex bg-flex-item">Flex item 1</div>
+                            <div class="p-2 bg-flex bg-flex-item">Flex item 2</div>
+                            <div class="p-2 bg-flex bg-flex-item">Flex item 3</div>
+                        </div>
+                        <div class="d-flex justify-content-between bg-flex mb-3">
+                            <div class="p-2 bg-flex bg-flex-item">Flex item 1</div>
+                            <div class="p-2 bg-flex bg-flex-item">Flex item 2</div>
+                            <div class="p-2 bg-flex bg-flex-item">Flex item 3</div>
+                        </div>
+                        <div class="d-flex justify-content-around bg-flex">
+                            <div class="p-2 bg-flex bg-flex-item">Flex item 1</div>
+                            <div class="p-2 bg-flex bg-flex-item">Flex item 2</div>
+                            <div class="p-2 bg-flex bg-flex-item">Flex item 3</div>
+                        </div>
+                    </div>
+                    <figure class="highlight">
+                        <pre><code class="language-html" data-lang="html"><span class="div">&lt;div</span> <span class="class">class=</span><span class="class-name">"d-flex justify-content-start"</span><span class="div">&gt;</span>...<span class="div">&lt;/div&gt;</span>
+        <span class="div">&lt;div</span> <span class="class">class=</span><span class="class-name">"d-flex justify-content-end"</span><span class="div">&gt;</span>...<span class="div">&lt;/div&gt;</span>
+        <span class="div">&lt;div</span> <span class="class">class=</span><span class="class-name">"d-flex justify-content-center"</span><span class="div">&gt;</span>...<span class="div">&lt;/div&gt;</span>
+        <span class="div">&lt;div</span> <span class="class">class=</span><span class="class-name">"d-flex justify-content-between"</span><span class="div">&gt;</span>...<span class="div">&lt;/div&gt;</span>
+        <span class="div">&lt;div</span> <span class="class">class=</span><span class="class-name">"d-flex justify-content-around"</span><span class="div">&gt;</span>...<span class="div">&lt;/div&gt;</span></code></pre>
+                    </figure>
+                    <!-- //flex -->
+                    <!-- badges -->
+                    <h4 class="mt-5 mb-3">Badges</h4>
+                    <div class="bd-example">
+                        <h1>Example heading <span class="badge bg-secondary">New</span></h1>
+                        <h2>Example heading <span class="badge bg-secondary">New</span></h2>
+                        <h3>Example heading <span class="badge bg-secondary">New</span></h3>
+                        <h4>Example heading <span class="badge bg-secondary">New</span></h4>
+                        <h5 class="texti">Example heading <span class="badge bg-secondary">New</span></h5>
+                        <h6>Example heading <span class="badge bg-secondary">New</span></h6>
+                    </div>
+                    <div class="highlight">
+                        <pre
+                            class="chroma"><code class="language-html" data-lang="html"><span class="paragraph">&lt;</span><span class="div">h1</span><span class="paragraph">&gt;</span>Example heading <span class="paragraph">&lt;</span><span class="div">span</span> <span class="class">class</span><span >=</span><span class="class-name">"badge bg-secondary"</span><span class="paragraph">&gt;</span>New<span class="paragraph">&lt;/</span><span class="div">span</span><span class="paragraph">&gt;&lt;/</span><span class="div">h1</span><span class="paragraph">&gt;</span>
+        <span class="paragraph">&lt;</span><span class="div">h2</span><span class="paragraph">&gt;</span>Example heading <span class="paragraph">&lt;</span><span class="div">span</span> <span class="class">class</span><span >=</span><span class="class-name">"badge bg-secondary"</span><span class="paragraph">&gt;</span>New<span class="paragraph">&lt;/</span><span class="div">span</span><span class="paragraph">&gt;&lt;/</span><span class="div">h2</span><span class="paragraph">&gt;</span>
+        <span class="paragraph">&lt;</span><span class="div">h3</span><span class="paragraph">&gt;</span>Example heading <span class="paragraph">&lt;</span><span class="div">span</span> <span class="class">class</span><span >=</span><span class="class-name">"badge bg-secondary"</span><span class="paragraph">&gt;</span>New<span class="paragraph">&lt;/</span><span class="div">span</span><span class="paragraph">&gt;&lt;/</span><span class="div">h3</span><span class="paragraph">&gt;</span>
+        <span class="paragraph">&lt;</span><span class="div">h4</span><span class="paragraph">&gt;</span>Example heading <span class="paragraph">&lt;</span><span class="div">span</span> <span class="class">class</span><span >=</span><span class="class-name">"badge bg-secondary"</span><span class="paragraph">&gt;</span>New<span class="paragraph">&lt;/</span><span class="div">span</span><span class="paragraph">&gt;&lt;/</span><span class="div">h4</span><span class="paragraph">&gt;</span>
+        <span class="paragraph">&lt;</span><span class="div">h5</span><span class="paragraph">&gt;</span>Example heading <span class="paragraph">&lt;</span><span class="div">span</span> <span class="class">class</span><span >=</span><span class="class-name">"badge bg-secondary"</span><span class="paragraph">&gt;</span>New<span class="paragraph">&lt;/</span><span class="div">span</span><span class="paragraph">&gt;&lt;/</span><span class="div">h5</span><span class="paragraph">&gt;</span>
+        <span class="paragraph">&lt;</span><span class="div">h6</span><span class="paragraph">&gt;</span>Example heading <span class="paragraph">&lt;</span><span class="div">span</span> <span class="class">class</span><span >=</span><span class="class-name">"badge bg-secondary"</span><span class="paragraph">&gt;</span>New<span class="paragraph">&lt;/</span><span class="div">span</span><span class="paragraph">&gt;&lt;/</span><span class="div">h6</span><span class="paragraph">&gt;</span></code></pre>
+                    </div>
+                    <!-- //badges -->
+                    <!-- lists -->
+                    <h4 class="mt-5 mb-3">Lists</h4>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <h5 class="pt-4 pb-3">List Group</h5>
+                            <div class="bd-example">
+                                <ul class="list-group">
+                                    <li class="list-group-item">Cras justo odio</li>
+                                    <li class="list-group-item">Dapibus ac facilisis in</li>
+                                    <li class="list-group-item">Morbi leo risus</li>
+                                    <li class="list-group-item">Porta ac consectetur ac</li>
+                                    <li class="list-group-item">Vestibulum at eros</li>
+                                </ul>
+                            </div>
+                            <figure class="highlight">
+                                <pre><code class="language-html" data-lang="html"><span class="div">&lt;ul</span> <span class="class">class=</span><span class="class-name">"list-group"</span><span class="div">&gt;</span>
+          <span class="div">&lt;li</span> <span class="class">class=</span><span class="class-name">"list-group-item"</span><span class="div">&gt;</span>Cras justo odio<span class="div">&lt;/li&gt;</span>
+          <span class="div">&lt;li</span> <span class="class">class=</span><span class="class-name">"list-group-item"</span><span class="div">&gt;</span>Dapibus ac facilisis in<span class="div">&lt;/li&gt;</span>
+          <span class="div">&lt;li</span> <span class="class">class=</span><span class="class-name">"list-group-item"</span><span class="div">&gt;</span>Morbi leo risus<span class="div">&lt;/li&gt;</span>
+          <span class="div">&lt;li</span> <span class="class">class=</span><span class="class-name">"list-group-item"</span><span class="div">&gt;</span>Porta ac consectetur ac<span class="div">&lt;/li&gt;</span>
+          <span class="div">&lt;li</span> <span class="class">class=</span><span class="class-name">"list-group-item"</span><span class="div">&gt;</span>Vestibulum at eros<span class="div">&lt;/li&gt;</span>
+        <span class="div">&lt;/ul&gt;</span></code></pre>
+                            </figure>
+                        </div>
+                        <div class="col-lg-6">
+                            <h5 class="pt-4 pb-3">Active items</h5>
+                            <div class="bd-example">
+                                <ul class="list-group">
+                                    <li class="list-group-item active">Cras justo odio</li>
+                                    <li class="list-group-item">Dapibus ac facilisis in</li>
+                                    <li class="list-group-item">Morbi leo risus</li>
+                                    <li class="list-group-item">Porta ac consectetur ac</li>
+                                    <li class="list-group-item">Vestibulum at eros</li>
+                                </ul>
+                            </div>
+                            <figure class="highlight">
+                                <pre><code class="language-html" data-lang="html"><span class="div">&lt;ul</span> <span class="class">class=</span><span class="class-name">"list-group"</span><span class="div">&gt;</span>
+          <span class="div">&lt;li</span> <span class="class">class=</span><span class="class-name">"list-group-item active"</span><span class="div">&gt;</span>Cras justo odio<span class="div">&lt;/li&gt;</span>
+          <span class="div">&lt;li</span> <span class="class">class=</span><span class="class-name">"list-group-item"</span><span class="div">&gt;</span>Dapibus ac facilisis in<span class="div">&lt;/li&gt;</span>
+          <span class="div">&lt;li</span> <span class="class">class=</span><span class="class-name">"list-group-item"</span><span class="div">&gt;</span>Morbi leo risus<span class="div">&lt;/li&gt;</span>
+          <span class="div">&lt;li</span> <span class="class">class=</span><span class="class-name">"list-group-item"</span><span class="div">&gt;</span>Porta ac consectetur ac<span class="div">&lt;/li&gt;</span>
+          <span class="div">&lt;li</span> <span class="class">class=</span><span class="class-name">"list-group-item"</span><span class="div">&gt;</span>Vestibulum at eros<span class="div">&lt;/li&gt;</span>
+        <span class="div">&lt;/ul&gt;</span></code></pre>
+                            </figure>
+                        </div>
+                        <div class="col-lg-6">
+                            <h5 class="pt-4 pb-3">Flush</h5>
+                            <div class="bd-example">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Cras justo odio</li>
+                                    <li class="list-group-item">Dapibus ac facilisis in</li>
+                                    <li class="list-group-item">Morbi leo risus</li>
+                                    <li class="list-group-item">Porta ac consectetur ac</li>
+                                    <li class="list-group-item">Vestibulum at eros</li>
+                                </ul>
+                            </div>
+                            <figure class="highlight">
+                                <pre><code class="language-html" data-lang="html"><span class="div">&lt;ul</span> <span class="class">class=</span><span class="class-name">"list-group list-group-flush"</span><span class="div">&gt;</span>
+          <span class="div">&lt;li</span> <span class="class">class=</span><span class="class-name">"list-group-item"</span><span class="div">&gt;</span>Cras justo odio<span class="div">&lt;/li&gt;</span>
+          <span class="div">&lt;li</span> <span class="class">class=</span><span class="class-name">"list-group-item"</span><span class="div">&gt;</span>Dapibus ac facilisis in<span class="div">&lt;/li&gt;</span>
+          <span class="div">&lt;li</span> <span class="class">class=</span><span class="class-name">"list-group-item"</span><span class="div">&gt;</span>Morbi leo risus<span class="div">&lt;/li&gt;</span>
+          <span class="div">&lt;li</span> <span class="class">class=</span><span class="class-name">"list-group-item"</span><span class="div">&gt;</span>Porta ac consectetur ac<span class="div">&lt;/li&gt;</span>
+          <span class="div">&lt;li</span> <span class="class">class=</span><span class="class-name">"list-group-item"</span><span class="div">&gt;</span>Vestibulum at eros<span class="div">&lt;/li&gt;</span>
+        <span class="div">&lt;/ul&gt;</span></code></pre>
+                            </figure>
+                        </div>
+                        <div class="col-lg-6 mt-md-0 mt-4">
+                            <h5 class="pt-4 pb-3">With Badges</h5>
+                            <div class="bd-example">
+                                <ul class="list-group">
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        Cras justo odio
+                                        <span class="badge badge-primary badge-pill">14</span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        Dapibus ac facilisis in
+                                        <span class="badge badge-primary badge-pill">2</span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        Morbi leo risus
+                                        <span class="badge badge-primary badge-pill">1</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <figure class="highlight">
+                                <pre><code class="language-html" data-lang="html"><span class="div">&lt;ul</span> <span class="class">class=</span><span class="class-name">"list-group"</span><span class="div">&gt;</span>
+          <span class="div">&lt;li</span> <span class="class">class=</span><span class="class-name">"list-group-item d-flex justify-content-between align-items-center"</span><span class="div">&gt;</span>
+            Cras justo odio
+            <span class="div">&lt;span</span> <span class="class">class=</span><span class="class-name">"badge badge-primary badge-pill"</span><span class="div">&gt;</span>14<span class="div">&lt;/span&gt;</span>
+          <span class="div">&lt;/li&gt;</span>
+          <span class="div">&lt;li</span> <span class="class">class=</span><span class="class-name">"list-group-item d-flex justify-content-between align-items-center"</span><span class="div">&gt;</span>
+            Dapibus ac facilisis in
+            <span class="div">&lt;span</span> <span class="class">class=</span><span class="class-name">"badge badge-primary badge-pill"</span><span class="div">&gt;</span>2<span class="div">&lt;/span&gt;</span>
+          <span class="div">&lt;/li&gt;</span>
+          <span class="div">&lt;li</span> <span class="class">class=</span><span class="class-name">"list-group-item d-flex justify-content-between align-items-center"</span><span class="div">&gt;</span>
+            Morbi leo risus
+            <span class="div">&lt;span</span> <span class="class">class=</span><span class="class-name">"badge badge-primary badge-pill"</span><span class="div">&gt;</span>1<span class="div">&lt;/span&gt;</span>
+          <span class="div">&lt;/li&gt;</span>
+        <span class="div">&lt;/ul&gt;</span></code></pre>
+                            </figure>
+                        </div>
+                    </div>
+                    <!-- //lists -->
+                    <!-- tables -->
+                    <h4 class="pt-4 pb-3 mt-sm-5 mt-3">Tables</h4>
+                    <div class="bd-example">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">First</th>
+                                    <th scope="col">Last</th>
+                                    <th scope="col">Handle</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Jacob</td>
+                                    <td>Thornton</td>
+                                    <td>@fat</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Larry</td>
+                                    <td>the Bird</td>
+                                    <td>@twitter</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <figure class="highlight">
+                        <pre><code class="language-html" data-lang="html"><span class="div">&lt;table</span> <span class="class">class=</span><span class="class-name">"table"</span><span class="div">&gt;</span>
+          <span class="div">&lt;thead&gt;</span>
+            <span class="div">&lt;tr&gt;</span>
+              <span class="div">&lt;th</span> <span class="class">scope=</span><span class="class-name">"col"</span><span class="div">&gt;</span>#<span class="div">&lt;/th&gt;</span>
+              <span class="div">&lt;th</span> <span class="class">scope=</span><span class="class-name">"col"</span><span class="div">&gt;</span>First<span class="div">&lt;/th&gt;</span>
+              <span class="div">&lt;th</span> <span class="class">scope=</span><span class="class-name">"col"</span><span class="div">&gt;</span>Last<span class="div">&lt;/th&gt;</span>
+              <span class="div">&lt;th</span> <span class="class">scope=</span><span class="class-name">"col"</span><span class="div">&gt;</span>Handle<span class="div">&lt;/th&gt;</span>
+            <span class="div">&lt;/tr&gt;</span>
+          <span class="div">&lt;/thead&gt;</span>
+          <span class="div">&lt;tbody&gt;</span>
+            <span class="div">&lt;tr&gt;</span>
+              <span class="div">&lt;th</span> <span class="class">scope=</span><span class="class-name">"row"</span><span class="div">&gt;</span>1<span class="div">&lt;/th&gt;</span>
+              <span class="div">&lt;td&gt;</span>Mark<span class="div">&lt;/td&gt;</span>
+              <span class="div">&lt;td&gt;</span>Otto<span class="div">&lt;/td&gt;</span>
+              <span class="div">&lt;td&gt;</span>@mdo<span class="div">&lt;/td&gt;</span>
+            <span class="div">&lt;/tr&gt;</span>
+            <span class="div">&lt;tr&gt;</span>
+              <span class="div">&lt;th</span> <span class="class">scope=</span><span class="class-name">"row"</span><span class="div">&gt;</span>2<span class="div">&lt;/th&gt;</span>
+              <span class="div">&lt;td&gt;</span>Jacob<span class="div">&lt;/td&gt;</span>
+              <span class="div">&lt;td&gt;</span>Thornton<span class="div">&lt;/td&gt;</span>
+              <span class="div">&lt;td&gt;</span>@fat<span class="div">&lt;/td&gt;</span>
+            <span class="div">&lt;/tr&gt;</span>
+            <span class="div">&lt;tr&gt;</span>
+              <span class="div">&lt;th</span> <span class="class">scope=</span><span class="class-name">"row"</span><span class="div">&gt;</span>3<span class="div">&lt;/th&gt;</span>
+              <span class="div">&lt;td&gt;</span>Larry<span class="div">&lt;/td&gt;</span>
+              <span class="div">&lt;td&gt;</span>the Bird<span class="div">&lt;/td&gt;</span>
+              <span class="div">&lt;td&gt;</span>@twitter<span class="div">&lt;/td&gt;</span>
+            <span class="div">&lt;/tr&gt;</span>
+          <span class="div">&lt;/tbody&gt;</span>
+        <span class="div">&lt;/table&gt;</span></code></pre>
+                    </figure>
+                    <h5 class="pt-4 pb-3">Striped rows</h5>
+                    <div class="bd-example">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">First</th>
+                                    <th scope="col">Last</th>
+                                    <th scope="col">Handle</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Jacob</td>
+                                    <td>Thornton</td>
+                                    <td>@fat</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Larry</td>
+                                    <td>the Bird</td>
+                                    <td>@twitter</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <figure class="highlight">
+                        <pre><code class="language-html" data-lang="html"><span class="div">&lt;table</span> <span class="class">class=</span><span class="class-name">"table table-striped"</span><span class="div">&gt;</span>
+          <span class="div">&lt;thead&gt;</span>
+            <span class="div">&lt;tr&gt;</span>
+              <span class="div">&lt;th</span> <span class="class">scope=</span><span class="class-name">"col"</span><span class="div">&gt;</span>#<span class="div">&lt;/th&gt;</span>
+              <span class="div">&lt;th</span> <span class="class">scope=</span><span class="class-name">"col"</span><span class="div">&gt;</span>First<span class="div">&lt;/th&gt;</span>
+              <span class="div">&lt;th</span> <span class="class">scope=</span><span class="class-name">"col"</span><span class="div">&gt;</span>Last<span class="div">&lt;/th&gt;</span>
+              <span class="div">&lt;th</span> <span class="class">scope=</span><span class="class-name">"col"</span><span class="div">&gt;</span>Handle<span class="div">&lt;/th&gt;</span>
+            <span class="div">&lt;/tr&gt;</span>
+          <span class="div">&lt;/thead&gt;</span>
+          <span class="div">&lt;tbody&gt;</span>
+            <span class="div">&lt;tr&gt;</span>
+              <span class="div">&lt;th</span> <span class="class">scope=</span><span class="class-name">"row"</span><span class="div">&gt;</span>1<span class="div">&lt;/th&gt;</span>
+              <span class="div">&lt;td&gt;</span>Mark<span class="div">&lt;/td&gt;</span>
+              <span class="div">&lt;td&gt;</span>Otto<span class="div">&lt;/td&gt;</span>
+              <span class="div">&lt;td&gt;</span>@mdo<span class="div">&lt;/td&gt;</span>
+            <span class="div">&lt;/tr&gt;</span>
+            <span class="div">&lt;tr&gt;</span>
+              <span class="div">&lt;th</span> <span class="class">scope=</span><span class="class-name">"row"</span><span class="div">&gt;</span>2<span class="div">&lt;/th&gt;</span>
+              <span class="div">&lt;td&gt;</span>Jacob<span class="div">&lt;/td&gt;</span>
+              <span class="div">&lt;td&gt;</span>Thornton<span class="div">&lt;/td&gt;</span>
+              <span class="div">&lt;td&gt;</span>@fat<span class="div">&lt;/td&gt;</span>
+            <span class="div">&lt;/tr&gt;</span>
+            <span class="div">&lt;tr&gt;</span>
+              <span class="div">&lt;th</span> <span class="class">scope=</span><span class="class-name">"row"</span><span class="div">&gt;</span>3<span class="div">&lt;/th&gt;</span>
+              <span class="div">&lt;td&gt;</span>Larry<span class="div">&lt;/td&gt;</span>
+              <span class="div">&lt;td&gt;</span>the Bird<span class="div">&lt;/td&gt;</span>
+              <span class="div">&lt;td&gt;</span>@twitter<span class="div">&lt;/td&gt;</span>
+            <span class="div">&lt;/tr&gt;</span>
+          <span class="div">&lt;/tbody&gt;</span>
+        <span class="div">&lt;/table&gt;</span></code></pre>
+                    </figure>
+                    <!-- //tables -->
+
+                    <!-- Modal -->
+                    <h4 class="pt-4 mt-sm-5 mt-3">Modals</h4>
+                    <h5 class="pt-3 pb-3">Live demo</h5>
+                    <div class="bd-example">
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal">
+                            Launch demo modal
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        ...
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="highlight">
+                        <pre class="chroma"><code class="language-html" data-lang="html"><span class="c">&lt;!-- Button trigger modal --&gt;</span>
+        <span class="paragraph">&lt;</span><span class="div">button</span> <span class="class">type</span><span >=</span><span class="class-name">"button"</span> <span class="class">class</span><span >=</span><span class="class-name">"btn btn-primary"</span> <span class="class">data-bs-toggle</span><span >=</span><span class="class-name">"modal"</span> <span class="class">data-bs-target</span><span >=</span><span class="class-name">"#exampleModal"</span><span class="paragraph">&gt;</span>
+            Launch demo modal
+        <span class="paragraph">&lt;/</span><span class="div">button</span><span class="paragraph">&gt;</span>
+        
+        <span class="c">&lt;!-- Modal --&gt;</span>
+        <span class="paragraph">&lt;</span><span class="div">div</span> <span class="class">class</span><span >=</span><span class="class-name">"modal fade"</span> <span class="class">id</span><span >=</span><span class="class-name">"exampleModal"</span> <span class="class">tabindex</span><span >=</span><span class="class-name">"-1"</span> <span class="class">aria-labelledby</span><span >=</span><span class="class-name">"exampleModalLabel"</span> <span class="class">aria-hidden</span><span >=</span><span class="class-name">"true"</span><span class="paragraph">&gt;</span>
+            <span class="paragraph">&lt;</span><span class="div">div</span> <span class="class">class</span><span >=</span><span class="class-name">"modal-dialog"</span><span class="paragraph">&gt;</span>
+            <span class="paragraph">&lt;</span><span class="div">div</span> <span class="class">class</span><span >=</span><span class="class-name">"modal-content"</span><span class="paragraph">&gt;</span>
+                <span class="paragraph">&lt;</span><span class="div">div</span> <span class="class">class</span><span >=</span><span class="class-name">"modal-header"</span><span class="paragraph">&gt;</span>
+                <span class="paragraph">&lt;</span><span class="div">h5</span> <span class="class">class</span><span >=</span><span class="class-name">"modal-title"</span> <span class="class">id</span><span >=</span><span class="class-name">"exampleModalLabel"</span><span class="paragraph">&gt;</span>Modal title<span class="paragraph">&lt;/</span><span class="div">h5</span><span class="paragraph">&gt;</span>
+                <span class="paragraph">&lt;</span><span class="div">button</span> <span class="class">type</span><span >=</span><span class="class-name">"button"</span> <span class="class">class</span><span >=</span><span class="class-name">"btn-close"</span> <span class="class">data-bs-dismiss</span><span >=</span><span class="class-name">"modal"</span> <span class="class">aria-label</span><span >=</span><span class="class-name">"Close"</span><span class="paragraph">&gt;&lt;/</span><span class="div">button</span><span class="paragraph">&gt;</span>
+                <span class="paragraph">&lt;/</span><span class="div">div</span><span class="paragraph">&gt;</span>
+                <span class="paragraph">&lt;</span><span class="div">div</span> <span class="class">class</span><span >=</span><span class="class-name">"modal-body"</span><span class="paragraph">&gt;</span>
+                ...
+                <span class="paragraph">&lt;/</span><span class="div">div</span><span class="paragraph">&gt;</span>
+                <span class="paragraph">&lt;</span><span class="div">div</span> <span class="class">class</span><span >=</span><span class="class-name">"modal-footer"</span><span class="paragraph">&gt;</span>
+                <span class="paragraph">&lt;</span><span class="div">button</span> <span class="class">type</span><span >=</span><span class="class-name">"button"</span> <span class="class">class</span><span >=</span><span class="class-name">"btn btn-secondary"</span> <span class="class">data-bs-dismiss</span><span >=</span><span class="class-name">"modal"</span><span class="paragraph">&gt;</span>Close<span class="paragraph">&lt;/</span><span class="div">button</span><span class="paragraph">&gt;</span>
+                <span class="paragraph">&lt;</span><span class="div">button</span> <span class="class">type</span><span >=</span><span class="class-name">"button"</span> <span class="class">class</span><span >=</span><span class="class-name">"btn btn-primary"</span><span class="paragraph">&gt;</span>Save changes<span class="paragraph">&lt;/</span><span class="div">button</span><span class="paragraph">&gt;</span>
+                <span class="paragraph">&lt;/</span><span class="div">div</span><span class="paragraph">&gt;</span>
+            <span class="paragraph">&lt;/</span><span class="div">div</span><span class="paragraph">&gt;</span>
+            <span class="paragraph">&lt;/</span><span class="div">div</span><span class="paragraph">&gt;</span>
+        <span class="paragraph">&lt;/</span><span class="div">div</span><span class="paragraph">&gt;</span>
+        </code></pre>
+                    </div>
+
+                    <h4 class="mt-4 mb-2" id="vertically-centered">Vertically centered</h4>
+                    <p>Add <code>.modal-dialog-centered</code> to <code>.modal-dialog</code> to vertically center the
+                        modal.
+                    </p>
+                    <div class="modal fade" id="exampleModalCenter" tabindex="-1"
+                        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>This is a vertically centered modal.</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal fade" id="exampleModalCenteredScrollable" tabindex="-1"
+                        aria-labelledby="exampleModalCenteredScrollableTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalCenteredScrollableTitle">Modal title</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>This is some placeholder content to show a vertically centered modal. We've added
+                                        some extra copy here to show how vertically centering the modal works when
+                                        combined
+                                        with scrollable modals. We also use some repeated line breaks to quickly extend
+                                        the
+                                        height of the content, thereby triggering the scrolling. When content becomes
+                                        longer
+                                        than the prefedined max-height of modal, content will be cropped and scrollable
+                                        within the modal.</p>
+                                    <br><br><br><br><br><br><br><br><br><br>
+                                    <p>Just like that.</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bd-example">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#exampleModalCenter">
+                            Vertically centered modal
+                        </button>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#exampleModalCenteredScrollable">
+                            Vertically centered scrollable modal
+                        </button>
+                    </div>
+                    <div class="highlight">
+                        <pre class="chroma"><code class="language-html" data-lang="html"><span class="c">&lt;!-- Vertically centered modal --&gt;</span>
+          <span class="paragraph">&lt;</span><span class="div">div</span> <span class="class">class</span><span >=</span><span class="class-name">"modal-dialog modal-dialog-centered"</span><span class="paragraph">&gt;</span>
+            ...
+          <span class="paragraph">&lt;/</span><span class="div">div</span><span class="paragraph">&gt;</span>
+          
+          <span class="c">&lt;!-- Vertically centered scrollable modal --&gt;</span>
+          <span class="paragraph">&lt;</span><span class="div">div</span> <span class="class">class</span><span >=</span><span class="class-name">"modal-dialog modal-dialog-centered modal-dialog-scrollable"</span><span class="paragraph">&gt;</span>
+            ...
+          <span class="paragraph">&lt;/</span><span class="div">div</span><span class="paragraph">&gt;</span>
+          </code></pre>
+                    </div>
+                    <!-- //models -->
+
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Footer section -->
+
+        <section style=" background-color: #0e0e0e">
+            <div class="container pt-md-5 pt-4 ">
+                <!-- <div> -->
+                <div class=" d-flex align-items-center justify-content-between mb-5 footer-contact-div">
+                    <h6 class="footer-sub-title">Contact Us</h6>
+
+                    <div class=" mt-5"
+                        style="width: 200px; display: flex; flex-direction: row; justify-content: space-between;">
+                        <span
+                            class="footer-icon-span-style d-flex align-items-center rounded-circle justify-content-center"
+                            style="width: 40px; height: 40px; background: #fff;">
+                            <i class="rounded-circle fas fa fa-facebook" style="color: #000; font-size: 22px;"
+                                aria-hidden="true"></i>
+                        </span>
+                        <span
+                            class="footer-icon-span-style d-flex align-items-center rounded-circle justify-content-center"
+                            style="width: 40px; height: 40px; background: #fff;">
+                            <i class=" rounded-circle fas fa fa-twitter" style="color: #000; font-size: 22px;"
+                                aria-hidden="true"></i>
+                        </span><span
+                            class="footer-icon-span-style d-flex align-items-center rounded-circle justify-content-center"
+                            style="width: 40px; height: 40px; background: #fff;">
+                            <i class=" rounded-circle fas fa fa-instagram" style="color: #000; font-size: 22px;"
+                                aria-hidden="true"></i>
+                        </span><span
+                            class="footer-icon-span-style d-flex align-items-center rounded-circle justify-content-center"
+                            style="width: 40px; height: 40px; background: #fff;">
+                            <i class=" rounded-circle fas fa fa-linkedin-square" style="color: #000; font-size: 22px;"
+                                aria-hidden="true"></i>
+                        </span>
+                    </div>
+                </div>
+
+                <div class=" row " style="margin-top: 120px;">
+                    <div class="col-lg-3 col-sm-6 ">
+                        <div class="address-div">
+                            <h5>
+                                10001 Alleghany st, 5th Avenue, 235 Terry, <br /> London.
+                            </h5>
+
+                            <h5 class="mt-5">
+                                Everyday: <span> 7 AM - 8 PM</span>
+                            </h5>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-sm-6 ">
+                        <div class="address-div">
+                            <h5 style="font-weight: bold">Phone</h5>
+                            <h5 class="phone-number-text mt-2">+1(21) 112 7368</h5>
+                        </div>
+
+                        <div class="address-div mt-4">
+                            <h5 style=" color: #FFFFFF">E-mail</h5>
+                            <h5 class="email-text mt-1"> laundries@mail.com</h5>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 col-sm-5 ">
+                        <div class="address-div ">
+                            <h5 style=" font-weight: bold">Support Links</h5>
+                        </div>
+                    </div>
+
+                    <div class="address-div col-lg-4 col-md-6 col-sm-7">
+                        <h5 style=" font-weight: bold">Subscribe Here</h5>
+                        <form action="" class="footer-input-style d-flex mt-3  mb-4">
+                            <input class="footer-input-style footer-input-dark-style" type="email" name="email"
+                                placeholder="Email Address" required="" />
+                            <button class="footer-button-style">
+                                <span>
+                                    <i class="fas fa fa-paper-plane"></i>
+                                </span>
+                            </button>
+                        </form>
+                        <p style="color: #707070;">
+                            Subscribe to our mailing list and get updates to your email
+                            inbox.
+                        </p>
+                    </div>
+                    <div class="pt-3">
+                        <p style=" color: #FFFFFF ; text-align: center">
+                            © 2023 Laundries. All Rights Reserved | WordPress Theme by
+                            <a href="#" style=" color: #54B963 ; text-decoration: none ; font-weight: bold ; ">
+                                W3Layouts.
+                            </a>
+                        </p>
+                    </div>
+                </div>
+                <!-- </div> -->
+            </div>
+        </section>
+
+        <!-- Footer section -->
+        <button class="top-move-btn" title="Go to top" style="display: block; ">
+            <a href="#" style="text-decoration: none ; color: #FFFFFF;">
+                <span class="fas fa fa-arrow-up" aria-hidden="true"></span>
+            </a>
+        </button>
+
+    </div>
+
+
+
+
+</body>
+
+</html>
